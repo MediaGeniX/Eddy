@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
 # Use sqlite3 as the database for Active Record
@@ -13,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'coffee-script-source', '1.8.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -23,18 +23,34 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+# easy styles
+gem 'bootstrap', '~> 4.0.0.alpha3'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
+# awesome font is awesome
+gem 'font-awesome-rails'
 
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+# CanCanCan is used for authorization
+gem 'cancancan'
+
+# Haml!
+gem 'haml-rails', '~> 0.9'
+
+# Tether for Bootstrap 4 popovers and stuff
+source 'http://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
+
+# Pagination
+gem 'will_paginate', '~> 3.1'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
+  gem 'pry-byebug'
+  gem 'rubocop'
+end
+
+group :test do
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :development do
