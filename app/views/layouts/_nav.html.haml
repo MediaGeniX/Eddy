@@ -1,0 +1,17 @@
+%nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
+  %button.navbar-toggler.hidden-sm-up{"data-target" => "#navigation", "data-toggle" => "collapse", :type => "button"}
+    \☰
+  #navigation.collapse.navbar-toggleable-xs
+    =link_to 'Eddy', root_path, class: 'navbar-brand'
+    %ul.nav.navbar-nav
+      %li.nav-item
+        %a.nav-link{href: "#"} Features
+      %li.nav-item
+        %a.nav-link{href: "#"} Scoreboard
+      %li.nav-item
+        %a.nav-link{href: "#"} History
+      %li.nav-item
+        %a.nav-link{href: "#"} Progress
+      %li.nav-item
+        %a.nav-link{href: "#"} Configure
+    = render partial: 'layouts/login'

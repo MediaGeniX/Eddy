@@ -1,0 +1,22 @@
+= bootstrap_devise_error_messages!
+.container
+  %h4 Edit #{resource_name.to_s.humanize}"
+  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+    %fieldset.form-group
+      = f.label :email
+      = f.email_field :email, autofocus: true, class: "form-control"
+    %fieldset.form-group
+      = f.label :password
+      %small.text-muted
+        Leave blank if you don't want to change it
+      = f.password_field :password, :autocomplete => "off", class: "form-control"
+    %fieldset.form-group
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, class: "form-control"
+    %fieldset.form-group
+      = f.label :current_password
+      %small.text-muted
+        We need your current password to confirm your changes
+      = f.password_field :current_password, class: "form-control"
+    = f.submit "Update", class: "btn btn-primary"
+= link_to 'Back', :back

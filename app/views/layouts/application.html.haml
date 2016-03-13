@@ -9,32 +9,8 @@
       = render partial: "layouts/ga" if Rails.env.production?
       = csrf_meta_tags
   %body
-    %nav.navbar.navbar-full.navbar-dark.bg-inverse
-      %button.navbar-toggler.hidden-sm-up{"data-target" => "#navigation", "data-toggle" => "collapse", :type => "button"}
-        \☰
-      #navigation.collapse.navbar-toggleable-xs
-        %a.navbar-brand{href: "#"} Eddy
-        %ul.nav.navbar-nav
-          %li.nav-item.active
-            %a.nav-link{href: "#"}
-              Home
-              %span.sr-only (current)
-          %li.nav-item
-            %a.nav-link{href: "#"} Features
-          %li.nav-item
-            %a.nav-link{href: "#"} Scoreboard
-          %li.nav-item
-            %a.nav-link{href: "#"} History
-          %li.nav-item
-            %a.nav-link{href: "#"} Progress
-          %li.nav-item
-            %a.nav-link{href: "#"} Configure
-        %form.form-inline.pull-xs-right
-          %button.btn.btn-success-outline{type: "submit"}
-            \ Login
-        %a.pull-xs-right.btn.btn-primary-outline
-          = fa_icon 'plus'
-          \ Add new ride
+    = render partial: 'layouts/nav'
+    = render partial: 'flash'
     = yield
     .container
       %hr
