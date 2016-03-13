@@ -1,13 +1,8 @@
-%div{:class => "navbar-form #{classes}"}
-  .form-group
-    / - if user_signed_in?
-    .form-group
-      = button_to "Logout", '', class: "btn btn-default form-control",  method: :delete
-    / - else
-    .form-group
-      .button-group
-        = button_to "Login", '', class: "btn btn-success form-control"
-      - if Rails.env.development?
-        .form-group
-          .button-group
-            = button_to "Login (dev)", '', class: "btn form-control"
+%form.form-inline.pull-xs-right
+  - if user_signed_in?
+    = link_to "Logout", destroy_user_session_path, class: "btn btn-success-outline",  method: :delete
+    %a.pull-xs-right.btn.btn-primary-outline
+      = fa_icon 'plus'
+      \ Add new ride
+  - else
+    = link_to "Login", new_user_session_path, class: "btn btn-success-outline"

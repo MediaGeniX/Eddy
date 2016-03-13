@@ -32,6 +32,9 @@ gem 'font-awesome-rails'
 # CanCanCan is used for authorization
 gem 'cancancan'
 
+# Login in is always nice
+gem 'devise'
+
 # Haml!
 gem 'haml-rails', '~> 0.9'
 
@@ -45,6 +48,8 @@ gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
 
 group :development, :test do
+  gem 'annotate'
+  gem 'erb2haml'
   gem 'pry-byebug'
   gem 'rubocop'
 end
