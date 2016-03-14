@@ -14,7 +14,8 @@
 class User < ActiveRecord::Base
   validates :name, uniqueness: true
   validates :email, presence: true, uniqueness: true
+  validates_format_of :email, with: /\@mediagenix\.tv/, message: 'You should have an email from mediagenix.tv'
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end
