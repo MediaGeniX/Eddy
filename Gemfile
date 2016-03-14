@@ -59,6 +59,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'puma'
 end
 
 group :development do
