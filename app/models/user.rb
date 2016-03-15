@@ -32,6 +32,8 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, with: /\@mediagenix\.tv/, message: 'You should have an email from mediagenix.tv'
 
+  has_many :trips
+
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
