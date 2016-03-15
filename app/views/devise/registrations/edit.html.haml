@@ -1,22 +1,35 @@
 = devise_error_messages!
 .container
-  %h4 Edit #{resource_name.to_s.humanize}"
+  %h3 Edit #{current_user.name.humanize}
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
+    %fieldset.form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control", placeholder: "Your full name", required: true
     %fieldset.form-group
       = f.label :email
       = f.email_field :email, autofocus: true, class: "form-control"
     %fieldset.form-group
+      = f.label :current_password
+      = f.password_field :current_password, class: "form-control"
+      %small.text-muted
+        We need your current password to confirm your changes
+    %fieldset.form-group
       = f.label :password
+      = f.password_field :password, :autocomplete => "off", class: "form-control"
       %small.text-muted
         Leave blank if you don't want to change it
-      = f.password_field :password, :autocomplete => "off", class: "form-control"
     %fieldset.form-group
       = f.label :password_confirmation
       = f.password_field :password_confirmation, class: "form-control"
     %fieldset.form-group
-      = f.label :current_password
+      = f.label :birthday
+      = f.date_field :birthday, class: "form-control", placeholder: "Your birthday", required: true
       %small.text-muted
-        We need your current password to confirm your changes
-      = f.password_field :current_password, class: "form-control"
+        Not shown publicly, only used for the < 25 age ranking
+    %fieldset.form-group
+      = f.label :location
+      = f.select :location, options_for_select(User.locations.collect { |s| [s[0].humanize, s[0]] }), {}, class: "form-control"
     = f.submit "Update", class: "btn btn-primary"
-= link_to 'Back', :back
+
+  %hr
+  = link_to 'Back', :back
