@@ -9,11 +9,6 @@
       = f.label :email
       = f.email_field :email, autofocus: true, class: "form-control"
     %fieldset.form-group
-      = f.label :current_password
-      = f.password_field :current_password, class: "form-control"
-      %small.text-muted
-        We need your current password to confirm your changes
-    %fieldset.form-group
       = f.label :password
       = f.password_field :password, :autocomplete => "off", class: "form-control"
       %small.text-muted
@@ -29,6 +24,11 @@
     %fieldset.form-group
       = f.label :location
       = f.select :location, options_for_select(User.locations.collect { |s| [s[0].humanize, s[0]] }), {}, class: "form-control"
+    %fieldset.form-group
+      = f.label :current_password
+      = f.password_field :current_password, class: "form-control"
+      %small.text-muted
+        We need your current password to confirm your changes
     = f.submit "Update", class: "btn btn-primary"
 
   %hr
