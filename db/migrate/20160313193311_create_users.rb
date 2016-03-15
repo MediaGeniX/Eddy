@@ -2,8 +2,9 @@ class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
       t.string :name
-      t.integer :age
       t.integer :country
+      t.date :birthday
+      t.integer :location, default: 0
 
       t.timestamps null: false
     end

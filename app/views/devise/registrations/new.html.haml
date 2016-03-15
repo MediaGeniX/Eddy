@@ -3,15 +3,27 @@
   %h3 Sign up
   = form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { role: "form" }) do |f|
     %fieldset.form-group
+      = f.label :name
+      = f.text_field :name, class: "form-control", placeholder: "Your full name", required: true
+    %fieldset.form-group
       = f.label :email
-      = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter email"
+      = f.email_field :email, autofocus: true, class: "form-control", placeholder: "Enter email", required: true
       %small.text-muted
         We'll never share your email with anyone else, this is just for confirmation you're actually from MgX!
     %fieldset.form-group
       = f.label :password
-      = f.password_field :password, class: "form-control", placeholder: "Password"
+      = f.password_field :password, class: "form-control", placeholder: "Password", required: true
     %fieldset.form-group
       = f.label :password_confirmation
-      = f.password_field :password_confirmation, class: "form-control", placeholder: "Repeat password"
+      = f.password_field :password_confirmation, class: "form-control", placeholder: "Repeat password", required: true
+    %fieldset.form-group
+      = f.label :birthday
+      = f.date_field :birthday, class: "form-control", placeholder: "Your birthday", required: true
+      %small.text-muted
+        Not shown publicly, only used for the < 25 age ranking
+    %fieldset.form-group
+      = f.label :location
+      = f.select :location, options_for_select(User.locations.collect { |s| [s[0].humanize, s[0]] }), {}, class: "form-control"
+
+
     = f.submit "Sign up", class: "btn btn-primary"
-  = render "devise/shared/links"

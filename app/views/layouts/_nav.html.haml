@@ -14,4 +14,19 @@
         %a.nav-link{href: "#"} Progress
       %li.nav-item
         %a.nav-link{href: "#"} Configure
-    = render partial: 'layouts/login'
+
+    .pull-xs-right
+      - if user_signed_in?
+        = link_to "#{fa_icon 'plus'} Add new ride".html_safe, '', class: "btn btn-primary-outline"
+      - else
+        = link_to "Login", new_user_session_path, class: "btn btn-success-outline"
+
+    - if user_signed_in?
+      %ul.nav.navbar-nav.pull-xs-right
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", "role" => "button", "aria-haspopup" => "true", "aria-expanded" => "false" }
+            Manage account
+          .dropdown-menu
+            = link_to 'Edit', edit_user_registration_path, class: "dropdown-item"
+            .dropdown-divider
+            = link_to 'Logout', destroy_user_session_path, class: "dropdown-item", method: :delete
