@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315193922) do
+ActiveRecord::Schema.define(version: 20160315200753) do
+
+  create_table "locations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "trips", force: :cascade do |t|
     t.integer  "distance"
@@ -22,8 +28,9 @@ ActiveRecord::Schema.define(version: 20160315193922) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
-    t.integer  "age"
     t.integer  "country"
+    t.date     "birthday"
+    t.integer  "location",               default: 0
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.string   "email",                  default: "", null: false
