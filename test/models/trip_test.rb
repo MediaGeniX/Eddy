@@ -7,6 +7,7 @@
 #  trip_date  :datetime
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :reference
 #
 
 require 'test_helper'
