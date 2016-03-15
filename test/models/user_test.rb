@@ -23,6 +23,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  admin                  :boolean          default("f")
 #
 
 require 'test_helper'
