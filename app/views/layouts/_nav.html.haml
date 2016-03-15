@@ -10,8 +10,9 @@
         %a.nav-link{href: "#"} Scoreboard
       %li.nav-item
         %a.nav-link{href: "#"} History
-      %li.nav-item
-        %a.nav-link{href: "#"} Progress
+      - if user_signed_in?
+        %li.nav-item
+          link_to("Progress", trips_path, class: 'nav-link')
       %li.nav-item
         %a.nav-link{href: "#"} Configure
     = render partial: 'layouts/login'
