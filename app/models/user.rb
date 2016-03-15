@@ -26,6 +26,8 @@
 #
 
 class User < ActiveRecord::Base
+  has_many :locations
+
   validates :name, presence: true, uniqueness: true
   validates :birthday, presence: true
   validates :location, presence: true
