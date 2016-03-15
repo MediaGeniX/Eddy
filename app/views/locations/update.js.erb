@@ -1,0 +1,6 @@
+<% if @location.errors.any? %>
+  $('#location-errors').html("<%= escape_javascript form_errors(@location) %>")
+<% else %>
+  $('#location-errors').html('')
+  $('#edit_<%= dom_id(@location) %>').replaceWith("<%= j render @location %>");
+<% end %>

@@ -12,8 +12,14 @@
         %a.nav-link{href: "#"} History
       %li.nav-item
         %a.nav-link{href: "#"} Progress
-      %li.nav-item
-        %a.nav-link{href: "#"} Configure
+
+      - if user_signed_in?
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", "role" => "button", "aria-haspopup" => "true", "aria-expanded" => "false" }
+            Configure
+          .dropdown-menu
+            = link_to "Locations", user_locations_path(current_user), class: "dropdown-item"
+            = link_to "Routes", user_routes_path(current_user), class: "dropdown-item"
 
     .pull-xs-right
       - if user_signed_in?

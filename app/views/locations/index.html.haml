@@ -1,0 +1,12 @@
+.container
+  %h3 Manage locations
+  .table-responsive
+    #table-locations.table.table-striped
+      .thead
+        .tr
+          %span.th Name
+          %span.th Actions
+      .tbody
+        = render @locations
+        = render "locations/form", object: @user.locations.new, button_name: "Add Location"
+    #location-errors.form-errors
