@@ -15,7 +15,7 @@ module DeviseHelper
 
     messages = errors.map { |msg| content_tag(:li, msg) }.join
     sentence = I18n.t('errors.messages.not_saved',
-                      count: resource.errors.count,
+                      count: resource.errors.count + flash_alerts.count,
                       resource: resource.class.model_name.human.downcase)
 
     html = <<-HTML
