@@ -1,0 +1,14 @@
+.container
+  %h3 Trips
+    .table-responsive
+      #table-trips.table.table-striped
+      .thead
+        .tr
+          %span.th Date
+          %span.th From
+          %span.th To
+          %span.th Distance
+      .tbody
+        - render @trips
+        = render "trips/form", object: @user.trips.new, button_name: "Add Trip"
+    #trip-errors.form-errors

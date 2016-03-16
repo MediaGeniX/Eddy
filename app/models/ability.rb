@@ -12,11 +12,12 @@ class Ability
     end
 
     can :manage, Location, user_id:  user.id
-
     cannot :destroy, Location do |location|
-      not (user.routes.where(from: location).empty? and
-           user.routes.where(to: location).empty?)
+      !(user.routes.where(from: location).empty? && user.routes.where(to: location).empty? &&
+        user.trips.where(from: location).empty? && user.trips.where(to: location).empty?)
     end
+
+    can :manage, Trip, user_id:  user.id
 
     can :manage, Route, user_id:  user.id
   end

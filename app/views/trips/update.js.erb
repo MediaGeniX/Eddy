@@ -1,0 +1,6 @@
+<% if @trip.errors.any? %>
+  $('#trip-errors').html("<%= escape_javascript form_errors(@trip) %>")
+<% else %>
+  $('#trip-errors').html('')
+  $('#edit_<%= dom_id(@trip) %>').replaceWith("<%= j render @trip %>");
+<% end %>
