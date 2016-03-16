@@ -1,0 +1,8 @@
+<% if @location.errors.any? %>
+  $('#location-errors').html("<%= escape_javascript form_errors(@location) %>");
+<% else %>
+  $('#location-errors').html('');
+  $('#new_location')[0].reset();
+
+  $('#table-locations .tr:last').before('<%= escape_javascript render @location %>')
+<% end %>

@@ -1,0 +1,6 @@
+<% if @route.errors.any? %>
+  $('#route-errors').html("<%= escape_javascript form_errors(@route) %>")
+<% else %>
+  $('#route-errors').html('')
+  $('#edit_<%= dom_id(@route) %>').replaceWith("<%= j render @route %>");
+<% end %>

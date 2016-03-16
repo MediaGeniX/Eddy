@@ -10,11 +10,17 @@
         %a.nav-link{href: "#"} Scoreboard
       %li.nav-item
         %a.nav-link{href: "#"} History
+      %li.nav-item
+        %a.nav-link{href: "#"} Configure
       - if user_signed_in?
         %li.nav-item
           = link_to("Progress", trips_path, class: 'nav-link')
-      %li.nav-item
-        %a.nav-link{href: "#"} Configure
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", "role" => "button", "aria-haspopup" => "true", "aria-expanded" => "false" }
+            Configure
+          .dropdown-menu
+            = link_to "Locations", user_locations_path(current_user), class: "dropdown-item"
+            = link_to "Routes", user_routes_path(current_user), class: "dropdown-item"
 
     .pull-xs-right
       - if user_signed_in?

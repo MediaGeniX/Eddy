@@ -1,0 +1,10 @@
+.tr{:id => dom_id(route)}
+  %span.td
+    = route.from.name
+  %span.td
+    = route.to.name
+  %span.td
+    = route.distance
+  %span.td
+    .nowrap
+      = render "routes/actions", route: route

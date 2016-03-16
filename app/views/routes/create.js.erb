@@ -1,0 +1,8 @@
+<% if @route.errors.any? %>
+  $('#route-errors').html("<%= escape_javascript form_errors(@route) %>");
+<% else %>
+  $('#route-errors').html('');
+  $('#new_route')[0].reset();
+
+  $('#table-routes .tr:last').before('<%= escape_javascript render @route %>')
+<% end %>

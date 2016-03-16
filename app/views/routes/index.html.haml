@@ -1,0 +1,13 @@
+.container
+  %h3 Manage routes
+  .table-responsive
+    #table-routes.table.table-striped
+      .thead
+        .tr
+          %span.th From
+          %span.th To
+          %span.th Distance
+      .tbody
+        = render @routes
+        = render "routes/form", object: @user.routes.new, button_name: "Add Route"
+    #route-errors.form-errors
