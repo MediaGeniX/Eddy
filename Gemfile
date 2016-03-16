@@ -32,7 +32,7 @@ gem 'cancancan'
 
 # Login in is always nice
 gem 'devise'
-gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 
 # Haml!
 gem 'haml-rails', '~> 0.9'
