@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160315220019) do
   create_table "users", force: :cascade do |t|
     t.string   "name",                                   null: false
     t.integer  "country",                                null: false
-    t.date     "birthday",                               null: false
+    t.date     "birthdate",                              null: false
     t.integer  "location",               default: 0,     null: false
     t.boolean  "admin",                  default: false, null: false
     t.datetime "created_at",                             null: false
