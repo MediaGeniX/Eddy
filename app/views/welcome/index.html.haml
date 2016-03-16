@@ -1,31 +1,39 @@
 .jumbotron
   .container
-    %h1.display-3 Eddy!
-    %p Welcome to Eddy, your personal MgX 1000km challenge tracker service.
-    %p
-      %a.btn.btn-primary.btn-lg
-        = fa_icon 'plus'
-        \ Add new ride
+    .row
+      .col-lg-4
+        = image_tag 'http://www.eddymerckx.com/skin/frontend/eddy_theme/default/eddy_merckx/Eddy_Merckx_the_cannibal_1.jpg'
+      .col-lg-8
+        %h1.display-3 Eddy!
+        %p Welcome to Eddy, your personal MgX 1000km challenge tracker service.
+        - if user_signed_in?
+          %a.btn.btn-primary-outline.btn-lg
+            = fa_icon 'plus'
+            Add new trip
+        - else
+          = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_registration_path, class: 'btn btn-lg btn-primary-outline'
+          = link_to "#{fa_icon 'user-plus'} Sign up".html_safe, new_user_registration_path, class: 'btn btn-lg btn-primary-outline'
+
 
 .container
   .row.marketing
     .col-lg-3
-      %h2 Scoreboards
+      %h4 1. Sign up
       %p
-        An overview of the current leading biker in every category.
-      %a.btn.btn-secondary{role: "button"} View details »
+        Create an account to manage
+      = link_to 'Sign up »', new_user_registration_path, class: 'btn btn-secondary'
     .col-lg-3
-      %h2 Progress
+      %h4 2. Set up routes
       %p
-        Keep track of your current progress
-      %a.btn.btn-secondary{role: "button"} View details »
+        Configure your favorite routes for quick & easy trip recording
+      %a.btn.btn-secondary{role: "button"} Routes »
     .col-lg-3
-      %h2 Configure
+      %h4 3. Record a trip
       %p
-        Configure your own trips, favourite routes and locations.
-      %a.btn.btn-secondary{role: "button"} View details »
+        Record trips to make your kilometers count!
+      %a.btn.btn-secondary{role: "button"} Trips »
     .col-lg-3
-      %h2 History
+      %h4 4. Check the scoreboard
       %p
-        A complete history of all past winners and records.
-      %a.btn.btn-secondary{role: "button"} View details »
+        An overview of the current leading bikers in every category.
+      %a.btn.btn-secondary{role: "button"} Scoreboard »

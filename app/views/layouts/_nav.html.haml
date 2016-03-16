@@ -12,19 +12,15 @@
         %li.nav-item
           %a.nav-link{href: "#"} Progress
         %li.nav-item
-          = link_to("Trips", user_trips_path(current_user), class: 'nav-link')
-        %li.nav-item.dropdown
-          %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", "role" => "button", "aria-haspopup" => "true", "aria-expanded" => "false" }
-            Configure
-          .dropdown-menu
-            = link_to "Locations", user_locations_path(current_user), class: "dropdown-item"
-            = link_to "Routes", user_routes_path(current_user), class: "dropdown-item"
+          = link_to('My trips', user_trips_path(current_user), class: 'nav-link')
+        %li.nav-item
+          = link_to('My routes', user_routes_path(current_user), class: 'nav-link')
 
     .pull-xs-right
       - if user_signed_in?
         = link_to "#{fa_icon 'plus'} Add new ride".html_safe, '', class: "btn btn-primary-outline"
       - else
-        = link_to "Login", new_user_session_path, class: "btn btn-success-outline"
+        = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_session_path, class: "btn btn-success-outline"
 
     - if user_signed_in?
       %ul.nav.navbar-nav.pull-xs-right

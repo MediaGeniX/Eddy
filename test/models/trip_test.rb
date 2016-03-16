@@ -3,11 +3,14 @@
 # Table name: trips
 #
 #  id         :integer          not null, primary key
-#  distance   :integer
-#  trip_date  :datetime
+#  trip_date  :datetime         not null
+#  distance   :integer          not null
+#  from       :string           not null
+#  to         :string           not null
+#  route_id   :integer
+#  user_id    :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  user_id    :reference
 #
 
 require 'test_helper'

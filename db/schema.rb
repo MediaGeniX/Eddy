@@ -11,39 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160316090522) do
-
-  create_table "locations", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20160315220019) do
 
   create_table "routes", force: :cascade do |t|
-    t.integer  "user_id"
-    t.integer  "from_id"
-    t.integer  "to_id"
-    t.integer  "distance"
+    t.integer  "user_id",    null: false
+    t.string   "from",       null: false
+    t.string   "to",         null: false
+    t.integer  "distance",   null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|
-    t.integer  "distance"
-    t.datetime "trip_date"
+    t.datetime "trip_date",  null: false
+    t.integer  "distance",   null: false
+    t.string   "from",       null: false
+    t.string   "to",         null: false
+    t.integer  "route_id"
+    t.integer  "user_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "user_id"
-    t.integer  "from_id"
-    t.integer  "to_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "country"
-    t.date     "birthday"
-    t.integer  "location",               default: 0
+    t.string   "name",                                   null: false
+    t.integer  "country",                                null: false
+    t.date     "birthday",                               null: false
+    t.integer  "location",               default: 0,     null: false
+    t.boolean  "admin",                  default: false, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false
     t.string   "email",                  default: "",    null: false
@@ -60,7 +55,6 @@ ActiveRecord::Schema.define(version: 20160316090522) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
