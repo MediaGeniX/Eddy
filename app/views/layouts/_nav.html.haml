@@ -5,15 +5,14 @@
     =link_to 'Eddy', root_path, class: 'navbar-brand'
     %ul.nav.navbar-nav
       %li.nav-item
-        %a.nav-link{href: "#"} Features
-      %li.nav-item
         %a.nav-link{href: "#"} Scoreboard
       %li.nav-item
         %a.nav-link{href: "#"} History
-      %li.nav-item
-        %a.nav-link{href: "#"} Progress
-
       - if user_signed_in?
+        %li.nav-item
+          %a.nav-link{href: "#"} Progress
+        %li.nav-item
+          = link_to("Trips", user_trips_path(current_user), class: 'nav-link')
         %li.nav-item.dropdown
           %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", "role" => "button", "aria-haspopup" => "true", "aria-expanded" => "false" }
             Configure

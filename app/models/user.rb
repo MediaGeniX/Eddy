@@ -29,6 +29,7 @@
 class User < ActiveRecord::Base
   has_many :locations
   has_many :routes
+  has_many :trips
 
   validates :name, presence: true, uniqueness: true
   validates :birthday, presence: true
@@ -39,5 +40,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum location: [ :belgium, :skopje ]
+  enum location: [:belgium, :skopje]
 end
