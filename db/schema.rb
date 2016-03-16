@@ -29,8 +29,15 @@ ActiveRecord::Schema.define(version: 20160316090522) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "trips" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "trips", force: :cascade do |t|
+    t.integer  "distance"
+    t.datetime "trip_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "from_id"
+    t.integer  "to_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
