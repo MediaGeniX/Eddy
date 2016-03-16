@@ -1,0 +1,8 @@
+<% if @trip.errors.any? %>
+  $('#trip-errors').html("<%= escape_javascript form_errors(@trip) %>");
+<% else %>
+  $('#trip-errors').html('');
+  $('#new_trip')[0].reset();
+
+  $('#table-trips .tr:last').before('<%= escape_javascript render @trip %>')
+<% end %>
