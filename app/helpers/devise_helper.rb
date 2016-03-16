@@ -1,5 +1,4 @@
 module DeviseHelper
-
   def devise_error_messages!
     flash_alerts = []
     error_key = 'errors.messages.not_saved'
@@ -11,14 +10,13 @@ module DeviseHelper
       error_key = 'devise.failure.invalid'
     end
 
-    return "" if resource.errors.empty? && flash_alerts.empty?
+    return '' if resource.errors.empty? && flash_alerts.empty?
     errors = resource.errors.empty? ? flash_alerts : resource.errors.full_messages
 
     messages = errors.map { |msg| content_tag(:li, msg) }.join
     sentence = I18n.t('errors.messages.not_saved',
                       count: resource.errors.count,
                       resource: resource.class.model_name.human.downcase)
-
 
     html = <<-HTML
       <div class="alert alert-danger alert-dismissable">
