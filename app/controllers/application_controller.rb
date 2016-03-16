@@ -17,6 +17,6 @@ class ApplicationController < ActionController::Base
   private
 
   def additional_devise_parameters
-    [ :name, :birthday, :location ]
+    [ :name, :birthdate, :location ]
   end
 end

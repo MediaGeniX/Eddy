@@ -1,10 +1,11 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.string :name
-      t.integer :country
-      t.date :birthday
-      t.integer :location, default: 0
+      t.string :name,      null: false
+      t.integer :country,  null: false
+      t.date :birthdate,   null: false
+      t.integer :location, null: false, default: 0
+      t.boolean :admin,    null: false, default: false
 
       t.timestamps null: false
     end
