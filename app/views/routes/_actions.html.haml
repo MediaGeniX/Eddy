@@ -1,0 +1,2 @@
+= link_to "#{fa_icon :edit} Edit".html_safe, edit_user_route_path(route.user, route), class: "btn btn-primary-outline btn-sm", remote: true
+= link_to "#{fa_icon :trash} Delete".html_safe, user_route_path(route.user, route), class: "btn btn-warning-outline btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete

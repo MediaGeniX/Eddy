@@ -23,9 +23,13 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  admin                  :boolean          default("f")
 #
 
 class User < ActiveRecord::Base
+  has_many :locations
+  has_many :routes
+
   validates :name, presence: true, uniqueness: true
   validates :birthday, presence: true
   validates :location, presence: true

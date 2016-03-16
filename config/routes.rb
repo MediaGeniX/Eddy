@@ -3,6 +3,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-
-  resources :trips
+  resources :users do
+    resources :locations
+    resources :trips
+    resources :routes
+  end
 end
