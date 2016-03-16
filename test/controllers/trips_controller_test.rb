@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LocationTest < ActiveSupport::TestCase
+class TripsControllerTest < ActionController::TestCase
   # test "the truth" do
   #   assert true
   # end

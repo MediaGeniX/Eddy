@@ -1,0 +1,11 @@
+= form_for [object.user, object], remote: true, html: { class: 'tr' } do |f|
+  %span.td
+    = f.date_field :trip_date
+  %span.td
+    = f.collection_select :from_id, object.user.locations, :id, :name, {}, class: 'form-control'
+  %span.td
+    = f.collection_select :to_id, object.user.locations, :id, :name, {}, class: 'form-control'
+  %span.td
+    = f.number_field :distance, class: 'form-control', placeholder: "In meters!"
+  %span.td
+    = f.button 'Save', class: 'btn btn-sm btn-primary'

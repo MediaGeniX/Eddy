@@ -1,0 +1,12 @@
+.tr{:id => dom_id(trip)}
+  %span.td
+    = trip.trip_date
+  %span.td
+    = trip.from.name
+  %span.td
+    = trip.to.name
+  %span.td
+    = trip.distance
+  %span.td
+    .nowrap
+      = render "trips/actions", trip: trip
