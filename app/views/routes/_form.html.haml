@@ -1,9 +1,11 @@
 = form_for [object.user, object], remote: true, html: { class: 'tr' } do |f|
   %span.td
-    = f.string_field :from, class: 'form-control'
+    = f.text_field :from, class: 'form-control'
   %span.td
-    = f.string_field :from, class: 'form-control'
+    = f.text_field :to, class: 'form-control'
   %span.td
-    = f.number_field :distance, class: 'form-control', placeholder: "In meters!"
+    = f.number_field :distance_in_kilometer, class: 'form-control', step: 0.001
+  %span.td
+    = f.text_field :alias, class: 'form-control'
   %span.td
     = f.button 'Save', class: 'btn btn-sm btn-primary'

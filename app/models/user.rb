@@ -4,7 +4,6 @@
 #
 #  id                     :integer          not null, primary key
 #  name                   :string           not null
-#  country                :integer          not null
 #  birthdate              :date             not null
 #  location               :integer          default(0), not null
 #  admin                  :boolean          default(FALSE), not null

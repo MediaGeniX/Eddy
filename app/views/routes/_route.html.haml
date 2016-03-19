@@ -4,7 +4,9 @@
   %span.td
     = route.to
   %span.td
-    = route.distance
+    = route.distance_in_kilometer
+  %span.td
+    = route.alias
   %span.td
     .nowrap
       = render "routes/actions", route: route

@@ -7,6 +7,8 @@
           %span.th From
           %span.th To
           %span.th Distance
+          %span.th Alias
+          %span.th Actions
       .tbody
         = render @routes
         = render "routes/form", object: @user.routes.new, button_name: "Add Route"

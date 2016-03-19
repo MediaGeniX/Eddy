@@ -2,13 +2,14 @@
 #
 # Table name: routes
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  from       :string           not null
-#  to         :string           not null
-#  distance   :integer          not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                :integer          not null, primary key
+#  user_id           :integer          not null
+#  from              :string           not null
+#  to                :string           not null
+#  alias             :string
+#  distance_in_meter :integer          not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
 #
 
 module RoutesHelper
