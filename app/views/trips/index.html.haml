@@ -8,6 +8,7 @@
           %span.th From
           %span.th To
           %span.th Distance
+          %span.th Actions
       .tbody
         - render @trips
         = render "trips/form", object: @user.trips.new, button_name: "Add Trip"

@@ -2,11 +2,11 @@
   %span.td
     = trip.trip_date
   %span.td
-    = trip.from.name
+    = trip.from
   %span.td
-    = trip.to.name
+    = trip.to
   %span.td
-    = trip.distance
+    = trip.distance_in_kilometer
   %span.td
     .nowrap
       = render "trips/actions", trip: trip

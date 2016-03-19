@@ -6,11 +6,9 @@
     %ul.nav.navbar-nav
       %li.nav-item
         %a.nav-link{href: "#"} Scoreboard
-      %li.nav-item
-        %a.nav-link{href: "#"} History
       - if user_signed_in?
         %li.nav-item
-          %a.nav-link{href: "#"} Progress
+          %a.nav-link{href: "#"} My progress
         %li.nav-item
           = link_to('My trips', user_trips_path(current_user), class: 'nav-link')
         %li.nav-item
