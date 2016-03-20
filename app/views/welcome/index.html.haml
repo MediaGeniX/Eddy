@@ -7,33 +7,35 @@
         %h1.display-3 Eddy!
         %p Welcome to Eddy, your personal MgX 1000km challenge tracker service.
         - if user_signed_in?
-          %a.btn.btn-primary-outline.btn-lg
-            = fa_icon 'plus'
-            Add new trip
+          = link_to "#{fa_icon :plus} Add new trip".html_safe, user_trips_path(current_user), class: 'btn btn-lg btn-primary-outline'
         - else
           = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_session_path, class: 'btn btn-lg btn-primary-outline'
           = link_to "#{fa_icon 'user-plus'} Sign up".html_safe, new_user_registration_path, class: 'btn btn-lg btn-primary-outline'
 
 
 .container
-  .row.marketing
+  .row
     .col-lg-3
       %h4 1. Sign up
       %p
-        Create an account to manage
-      = link_to 'Sign up »', new_user_registration_path, class: 'btn btn-secondary'
+        Create an account to manage your routes, ridden trips and progress.
+      %p
+        = link_to 'Sign up »', new_user_registration_path, class: 'btn btn-secondary'
     .col-lg-3
       %h4 2. Set up routes
       %p
-        Configure your favorite routes for quick & easy trip recording
-      %a.btn.btn-secondary{role: "button"} Routes »
+        Configure your favorite routes for quick & easy trip recording.
+      %p
+        = link_to 'Routes »', if user_signed_in? then user_routes_path(current_user) else new_user_session_path end, class: 'btn btn-secondary'
     .col-lg-3
       %h4 3. Record a trip
       %p
         Record trips to make your kilometers count!
-      %a.btn.btn-secondary{role: "button"} Trips »
+      %p
+        = link_to 'Trips »', if user_signed_in? then user_trips_path(current_user) else new_user_session_path end, class: 'btn btn-secondary'
     .col-lg-3
-      %h4 4. Check the scoreboard
+      %h4 4. Check the rankings
       %p
         An overview of the current leading bikers in every category.
-      %a.btn.btn-secondary{role: "button"} Scoreboard »
+      %p
+        = link_to 'Scoreboard »', scoreboard_path, class: 'btn btn-secondary'

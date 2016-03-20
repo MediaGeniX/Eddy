@@ -1,5 +1,5 @@
 %nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
-  %button.navbar-toggler.hidden-sm-up{"data-target" => "#navigation", "data-toggle" => "collapse", :type => "button"}
+  %button.navbar-toggler.hidden-sm-up{ data: { target: '#navigation', toggle: 'collapse' }, type: 'button' }
     \☰
   #navigation.collapse.navbar-toggleable-xs
     =link_to 'Eddy', root_path, class: 'navbar-brand'
@@ -16,16 +16,16 @@
 
     .pull-xs-right
       - if user_signed_in?
-        = link_to "#{fa_icon 'plus'} Add new ride".html_safe, '', class: "btn btn-primary-outline"
+        = link_to "#{fa_icon 'plus'} Add new trip".html_safe, user_trips_path(current_user), class: "btn btn-primary-outline"
       - else
         = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_session_path, class: "btn btn-success-outline"
 
     - if user_signed_in?
-      %ul.nav.navbar-nav.pull-xs-right
+      %ul#manage-account-dropdown.nav.navbar-nav.pull-xs-right
         %li.nav-item.dropdown
-          %a.nav-link.dropdown-toggle{"data-toggle" => "dropdown", "role" => "button", "aria-haspopup" => "true", "aria-expanded" => "false" }
+          %a.nav-link.dropdown-toggle{ data: {toggle: 'dropdown'}, role: 'button', aria: { haspopup: true, expanded: false } }
             Manage account
           .dropdown-menu
-            = link_to 'Edit', edit_user_registration_path, class: "dropdown-item"
+            = link_to 'Edit', edit_user_registration_path, class: 'dropdown-item'
             .dropdown-divider
-            = link_to 'Logout', destroy_user_session_path, class: "dropdown-item", method: :delete
+            = link_to 'Logout', destroy_user_session_path, class: 'dropdown-item', method: :delete
