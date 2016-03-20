@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, with: /\@mediagenix\.tv/, message: 'Fill in your mediagenix.tv address'
 
-  devise :database_authenticatable, :registerable, :confirmable,
+  devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   enum location: [:belgium, :skopje]
