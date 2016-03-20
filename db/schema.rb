@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20160315220019) do
     t.string   "name",                                   null: false
     t.date     "birthdate",                              null: false
     t.integer  "location",               default: 0,     null: false
+    t.integer  "sex",                    default: 0,     null: false
     t.boolean  "admin",                  default: false, null: false
     t.datetime "created_at",                             null: false
     t.datetime "updated_at",                             null: false

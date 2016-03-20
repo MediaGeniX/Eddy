@@ -1,0 +1,12 @@
+= form_for [object.user, object], remote: true, html: { class: 'form-inline' } do |f|
+  .form-group
+    = label(:trip_date, :trip_date)
+    = f.date_field :trip_date, value: "#{Date.today}", class: 'form-control', required: true
+  .form-group
+    = label(:alias, :alias)
+    = f.text_field :alias, class: 'form-control', placeholder: 'From - To (- From)', required: true
+  .form-group
+    = label(:distance_in_kilometer, :distance_in_kilometer)
+    = f.number_field :distance_in_kilometer, class: 'form-control', step: 0.001, required: true
+  .form-group
+    = f.submit 'Save', class: 'btn btn-primary'

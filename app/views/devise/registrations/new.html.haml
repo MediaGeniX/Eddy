@@ -22,6 +22,9 @@
       %small.text-muted
         Not shown publicly, only used for the < 25 age ranking
     %fieldset.form-group
+      = f.label :sex
+      = f.select :sex, options_for_select(User.sexes.collect { |s| [s[0].humanize, s[0]] }), {}, class: "form-control"
+    %fieldset.form-group
       = f.label :location
       = f.select :location, options_for_select(User.locations.collect { |s| [s[0].humanize, s[0]] }), {}, class: "form-control"
 
