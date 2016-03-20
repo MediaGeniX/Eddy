@@ -9,7 +9,7 @@ class ScoreboardController < ApplicationController
           FROM users
           INNER JOIN trips ON trips.user_id = users.id
           GROUP BY trip_date, users.name, users.id) AS useless_alias_for_postgres
-       GROUP BY id
+       GROUP BY name, id
        ORDER BY maximum_total_distance DESC')
 
     @pink_jersey = Trip.joins(:user).merge(User.women).group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
