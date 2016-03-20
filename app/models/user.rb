@@ -41,4 +41,8 @@ class User < ActiveRecord::Base
 
   enum location: [:belgium, :skopje]
   enum sex: [:male, :female]
+
+  scope :women, -> { where('sex = ?', 1) }
+  scope :young, -> { where('birthdate >= ?', Date.today - 26.year) }
+  scope :old, -> { where('birthdate <= ?', Date.today - 50.year) }
 end

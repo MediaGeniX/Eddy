@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
+  get 'scoreboard', to: 'scoreboard#index'
+
   resources :users do
     resources :locations
     resources :trips do
