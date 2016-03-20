@@ -1,12 +1,8 @@
 .tr{:id => dom_id(route)}
   %span.td
-    = route.from
-  %span.td
-    = route.to
+    = route.alias
   %span.td
     = route.distance_in_kilometer
-  %span.td
-    = route.alias
   %span.td
     .nowrap
       = render "routes/actions", route: route

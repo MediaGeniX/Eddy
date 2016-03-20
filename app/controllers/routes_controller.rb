@@ -37,6 +37,6 @@ class RoutesController < ApplicationController
   private
 
   def route_params
-    params.require(:route).permit(:from, :to, :distance_in_kilometer, :alias)
+    params.require(:route).permit(:alias, :distance_in_kilometer)
   end
 end

@@ -15,20 +15,20 @@ ActiveRecord::Schema.define(version: 20160315220019) do
 
   create_table "routes", force: :cascade do |t|
     t.integer  "user_id",           null: false
-    t.string   "from",              null: false
-    t.string   "to",                null: false
-    t.string   "alias"
+    t.string   "alias",             null: false
     t.integer  "distance_in_meter", null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
 
   create_table "trips", force: :cascade do |t|
-    t.datetime "trip_date",  null: false
-    t.integer  "route_id",   null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.date     "trip_date",         null: false
+    t.integer  "route_id"
+    t.integer  "user_id",           null: false
+    t.string   "alias",             null: false
+    t.integer  "distance_in_meter", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|

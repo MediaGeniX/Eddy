@@ -1,9 +1,12 @@
 class CreateTrips < ActiveRecord::Migration
   def change
     create_table :trips do |t|
-      t.datetime :trip_date,         null: false
-      t.references :route,           null: false
-      t.references :user,            null: false
+      t.date :trip_date,            null: false
+      t.references :route
+      t.references :user,           null: false
+      t.string :alias,               null: false
+      t.integer :distance_in_meter, null: false
+
 
       t.timestamps null: false
     end

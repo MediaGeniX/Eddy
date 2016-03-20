@@ -3,20 +3,17 @@
 # Table name: trips
 #
 #  id                :integer          not null, primary key
-#  trip_date         :datetime         not null
-#  distance_in_meter :integer          not null
-#  from              :string           not null
-#  to                :string           not null
+#  trip_date         :date             not null
 #  route_id          :integer
 #  user_id           :integer          not null
+#  alias             :string           not null
+#  distance_in_meter :integer          not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #
 
-class Trip < ActiveRecord::Base
+class Trip < Movement
   belongs_to :user
-  belongs_to :route
 
   validates :trip_date, presence: true
-  validates :route, presence: true
 end

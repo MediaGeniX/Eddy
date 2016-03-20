@@ -1,10 +1,8 @@
 .tr{:id => dom_id(trip)}
   %span.td
-    = trip.trip_date
+    = trip.trip_date.to_formatted_s(:long)
   %span.td
-    = trip.from
-  %span.td
-    = trip.to
+    = trip.alias
   %span.td
     = trip.distance_in_kilometer
   %span.td
