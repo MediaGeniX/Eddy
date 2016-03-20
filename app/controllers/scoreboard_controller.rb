@@ -8,7 +8,7 @@ class ScoreboardController < ApplicationController
        FROM (SELECT users.name, users.id, SUM(distance_in_meter) AS total_distance
           FROM users
           INNER JOIN trips ON trips.user_id = users.id
-          GROUP BY trip_date, user_id) AS useless_alias_for_postgres
+          GROUP BY trip_date, users.name, users.id) AS useless_alias_for_postgres
        GROUP BY id
        ORDER BY maximum_total_distance DESC')
 
