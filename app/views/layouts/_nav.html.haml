@@ -8,11 +8,11 @@
         %a.nav-link{href: "#"} Scoreboard
       - if user_signed_in?
         %li.nav-item
-          %a.nav-link{href: "#"} My progress
+          %a.nav-link{href: "#"} Progress
         %li.nav-item
-          = link_to('My trips', user_trips_path(current_user), class: 'nav-link')
+          = link_to('Trips', user_trips_path(current_user), class: 'nav-link')
         %li.nav-item
-          = link_to('My routes', user_routes_path(current_user), class: 'nav-link')
+          = link_to('Routes', user_routes_path(current_user), class: 'nav-link')
 
     .pull-xs-right
       - if user_signed_in?
