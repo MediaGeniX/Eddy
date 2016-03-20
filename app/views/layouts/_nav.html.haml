@@ -5,7 +5,7 @@
     =link_to 'Eddy', root_path, class: 'navbar-brand'
     %ul.nav.navbar-nav
       %li.nav-item
-        %a.nav-link{href: "#"} Scoreboard
+        = link_to('Scoreboard', scoreboard_path, class: 'nav-link')
       - if user_signed_in?
         %li.nav-item
           %a.nav-link{href: "#"} Progress

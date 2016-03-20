@@ -1,0 +1,123 @@
+.container
+  %h3 Scoreboard
+  %p
+    .card-deck-wrapper
+      .card-deck
+        .card
+          .card-block
+            %h4.card-title Yellow Jersey
+            %h6.card-subtitle.text-muted
+              Most total distance
+          .card-block
+            .card-title
+              %table.table.table-sm
+                %thead
+                  %tr
+                    %th #
+                    %th Name
+                    %th.text-xs-right Distance
+                %tbody
+                  - @yellow_jersey.each_with_index do |(user, meter), i|
+                    %tr
+                      %th{scope: 'row'}= i+1
+                      %td= user.name
+                      %td.text-xs-right= pretty_number(meter_to_kilometer(meter))
+        .card
+          .card-block
+            %h4.card-title Polka Dot Jersey
+            %h6.card-subtitle.text-muted
+              Most days biked
+          .card-block
+            .card-title
+              %table.table.table-sm
+                %thead
+                  %tr
+                    %th #
+                    %th Name
+                    %th.text-xs-right Days
+                %tbody
+                  - @polka_dot_jersey.each_with_index do |(user, days), i|
+                    %tr
+                      %th{scope: 'row'}= i+1
+                      %td= user.name
+                      %td.text-xs-right= pretty_number(days)
+        .card
+          .card-block
+            %h4.card-title Green Jersey
+            %h6.card-subtitle.text-muted
+              Most distance on one day
+          .card-block
+            .card-title
+              %table.table.table-sm
+                %thead
+                  %tr
+                    %th #
+                    %th Name
+                    %th.text-xs-right Distance
+                %tbody
+                  - @green_jersey.each_with_index do |user, i|
+                    %tr
+                      %th{scope: 'row'}= i+1
+                      %td= user.name
+                      %td.text-xs-right= pretty_number(meter_to_kilometer(user.maximum_total_distance))
+
+  %p
+    .card-deck-wrapper
+      .card-deck
+        .card
+          .card-block
+            %h4.card-title Pink Jersey
+            %h6.card-subtitle.text-muted
+              Most total distance (women)
+          .card-block
+            .card-title
+              %table.table.table-sm
+                %thead
+                  %tr
+                    %th #
+                    %th Name
+                    %th.text-xs-right Distance
+                %tbody
+                  - @pink_jersey.each_with_index do |(user, meter), i|
+                    %tr
+                      %th{scope: 'row'}= i+1
+                      %td= user.name
+                      %td.text-xs-right= pretty_number(meter_to_kilometer(meter))
+        .card
+          .card-block
+            %h4.card-title White
+            %h6.card-subtitle.text-muted
+              Most total distance (< 26 year)
+          .card-block
+            .card-title
+              %table.table.table-sm
+                %thead
+                  %tr
+                    %th #
+                    %th Name
+                    %th.text-xs-right Distance
+                %tbody
+                  - @white_jersey.each_with_index do |(user, meter), i|
+                    %tr
+                      %th{scope: 'row'}= i+1
+                      %td= user.name
+                      %td.text-xs-right= pretty_number(meter_to_kilometer(meter))
+        .card
+          .card-block
+            %h4.card-title Grey Jersey
+            %h6.card-subtitle.text-muted
+              Most total distance (> 50 year)
+          .card-block
+            .card-title
+              %table.table.table-sm
+                %thead
+                  %tr
+                    %th #
+                    %th Name
+                    %th.text-xs-right Distance
+                %tbody
+                  - @grey_jersey.each_with_index do |user, i|
+                    %tr
+                      %th{scope: 'row'}= i+1
+                      %td= user.name
+                      %td.text-xs-right= pretty_number(meter_to_kilometer(user.maximum_total_distance))

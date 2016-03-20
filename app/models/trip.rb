@@ -17,8 +17,6 @@ class Trip < Movement
 
   validates :trip_date, presence: true
 
-  default_scope { order('trip_date DESC') }
-
   def copy_to_next_working_day
     copy_to_date(next_working_day(self.trip_date))
   end
