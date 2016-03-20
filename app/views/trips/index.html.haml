@@ -1,5 +1,8 @@
 .container
   %h3 Trips
+  %h5 Add new trip
+  = render "trips/new_form", object: @user.trips.new, button_name: "Add Trip"
+  %h5 History
   #table-trips.table.table-striped
     .thead
       .tr
@@ -8,6 +11,5 @@
         %span.th Distance
         %span.th Actions
     .tbody
-      = render "trips/form", object: @user.trips.new, button_name: "Add Trip"
       = render @trips
   #trip-errors.form-errors

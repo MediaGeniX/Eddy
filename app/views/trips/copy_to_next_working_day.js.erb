@@ -1,1 +1,1 @@
-$('#table-trips .tbody .tr:first').after('<%= escape_javascript render @copied_trip %>')
+$('#table-trips .tbody').prepend('<%= escape_javascript render @copied_trip %>')

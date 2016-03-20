@@ -32,6 +32,7 @@ class User < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates :birthdate, presence: true
   validates :location, presence: true
+  validates :sex, presence: true
   validates :email, presence: true, uniqueness: true
   validates_format_of :email, with: /\@mediagenix\.tv/, message: 'Fill in your mediagenix.tv address'
 
@@ -39,4 +40,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   enum location: [:belgium, :skopje]
+  enum sex: [:male, :female]
 end
