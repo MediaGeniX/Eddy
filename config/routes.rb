@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   get 'scoreboard', to: 'scoreboard#index'
 
   resources :users do
+    member do
+      get 'progress', to: 'progress#index'
+    end
     resources :locations
     resources :trips do
       member do

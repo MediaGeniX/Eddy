@@ -1,0 +1,24 @@
+.container
+  %h3 Progress
+  %p
+    = "Current distance: <strong>#{meter_to_kilometer(@current_meters)}/1000 km</strong>".html_safe
+    %progress.progress.progress-striped{ value: @current_meters, max: 1000000 } %
+
+  %p
+    .card-deck-wrapper
+      .card-deck
+        .card.text-xs-center
+          .card-header
+            Total distance
+          .card-block
+            %h4.card-title= "#{pretty_number(meter_to_kilometer(@current_meters))} km"
+        .card.text-xs-center
+          .card-header
+            Days biked
+          .card-block
+            %h4.card-title= @days_cycled
+        .card.text-xs-center
+          .card-header
+            Largest distance on a single day
+          .card-block
+            %h4.card-title= "#{pretty_number(meter_to_kilometer(@largest_distance_in_one_day))} km"

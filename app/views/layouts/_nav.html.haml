@@ -8,7 +8,7 @@
         = link_to('Scoreboard', scoreboard_path, class: 'nav-link')
       - if user_signed_in?
         %li.nav-item
-          %a.nav-link{href: "#"} Progress
+          = link_to('Progress', user_path(current_user), class: 'nav-link')
         %li.nav-item
           = link_to('Trips', user_trips_path(current_user), class: 'nav-link')
         %li.nav-item
