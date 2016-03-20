@@ -4,5 +4,5 @@
   $('#trip-errors').html('');
   $('#new_trip')[0].reset();
 
-  $('#table-trips .tr:last').before('<%= escape_javascript render @trip %>')
+  $('#table-trips .tbody .tr:first').after('<%= escape_javascript render @trip %>')
 <% end %>

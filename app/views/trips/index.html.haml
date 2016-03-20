@@ -9,6 +9,6 @@
           %span.th Distance
           %span.th Actions
       .tbody
-        = render @trips
         = render "trips/form", object: @user.trips.new, button_name: "Add Trip"
+        = render @trips
     #trip-errors.form-errors
