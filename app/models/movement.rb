@@ -4,7 +4,7 @@ class Movement < ActiveRecord::Base
   belongs_to :user
 
   validates :alias, presence: true
-  validates :distance_in_meter, presence: true
+  validates :distance_in_meter, presence: true, numericality: { greater_than: 0 }
 
   attr_accessor :distance_in_kilometer
 

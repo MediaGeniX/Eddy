@@ -1,8 +1,16 @@
 .container
   %h3 Trips
-  %p
-    %h5 Add new trip
-    = render "trips/new_form", object: @user.trips.new, button_name: "Add Trip"
+  .row
+    .col-sm-6
+      %h5 Add new trip
+      %p
+        #new-trip-errors.form-errors
+        = render "trips/new_form", object: @user.trips.new, button_name: "Add Trip"
+    .col-sm-6
+      %h5 Create trip from route
+      %p
+        #new-trip-from-route-errors.form-errors
+        = render "trips/new_from_route_form"
   %p
     %h5 History
     #table-trips.table.table-striped
@@ -14,4 +22,4 @@
           %span.th Actions
       .tbody
         = render @trips
-    #trip-errors.form-errors
+    #edit-trip-errors.form-errors

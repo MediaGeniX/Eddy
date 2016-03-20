@@ -17,10 +17,18 @@ class TripsController < ApplicationController
   load_and_authorize_resource :trip, through: :user
 
   def index
+    @trips = @user.trips.sorted_by_date
   end
 
   def create
     @trip.save
+  end
+
+  def create_from_route
+    route = @user.routes.find route_params[:route]
+    date = route_params[:trip_date]
+    authorize! :read, route
+    @new_trip = Trip.create_from_route(@user, date, route)
   end
 
   def edit
@@ -50,5 +58,9 @@ class TripsController < ApplicationController
 
   def trip_params
     params.require(:trip).permit(:trip_date, :alias, :distance_in_kilometer)
+  end
+
+  def route_params
+    params.require(:trip).permit(:trip_date, :route)
   end
 end
