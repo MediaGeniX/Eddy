@@ -37,10 +37,11 @@ gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 # Haml!
 gem 'haml-rails', '~> 0.9'
 
+# Check out these suit days
+gem 'working_hours'
+
 # Tether for Bootstrap 4 popovers and stuff
-source 'http://rails-assets.org' do
-  gem 'rails-assets-tether', '>= 1.1.0'
-end
+gem 'rails-assets-tether', '>= 1.1.0'
 
 # Pagination
 gem 'will_paginate', '~> 3.1'

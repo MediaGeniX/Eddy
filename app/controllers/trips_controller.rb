@@ -34,6 +34,18 @@ class TripsController < ApplicationController
     @trip.destroy
   end
 
+  def copy_to_next_working_day
+    @copied_trip = @trip.copy_to_next_working_day
+  end
+
+  def copy_to_today
+    @copied_trip = @trip.copy_to_today
+  end
+
+  def copy_to_same_day
+    @copied_trip = @trip.copy_to_same_day
+  end
+
   private
 
   def trip_params

@@ -1,3 +1,11 @@
-= link_to "#{fa_icon :edit} Edit".html_safe, edit_user_trip_path(trip.user, trip), class: "btn btn-primary-outline btn-sm", remote: true
+%span.btn-group
+  %button.btn.btn-sm.btn-secondary.dropdown-toggle{data: {toggle: 'dropdown'}, aria: {hashpopup: 'true', expanded: 'false'}}
+    = "#{fa_icon :clone} Duplicate to".html_safe
+  %span.dropdown-menu
+    = link_to 'Next working day'.html_safe, copy_to_next_working_day_user_trip_path(trip.user, trip), class: "dropdown-item", remote: true, method: :post
+    = link_to 'Today'.html_safe, copy_to_today_user_trip_path(trip.user, trip), class: "dropdown-item", remote: true, method: :post
+    = link_to 'Same day'.html_safe, copy_to_same_day_user_trip_path(trip.user, trip), class: "dropdown-item", remote: true, method: :post
+|
+= link_to "#{fa_icon :edit} Edit".html_safe, edit_user_trip_path(trip.user, trip), class: "btn btn-secondary btn-sm", remote: true
 - if can? :destroy, trip
-  = link_to "#{fa_icon :trash} Delete".html_safe, user_trip_path(trip.user, trip), class: "btn btn-warning-outline btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete
+  = link_to "#{fa_icon :trash} Delete".html_safe, user_trip_path(trip.user, trip), class: "btn btn-danger btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete
