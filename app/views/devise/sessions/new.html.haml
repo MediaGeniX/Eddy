@@ -1,3 +1,6 @@
+.alert.alert-warning{role: 'alert'}
+  %strong Warning!
+  = "These aren't your normal MgX credentials you use for Windows/Wiki/... Use those you received by email or #{link_to 'create a new account', new_user_registration_path, class: 'alert-link'}.".html_safe
 = devise_error_messages!
 .container
   %h3 Sign in
