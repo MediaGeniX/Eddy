@@ -5,11 +5,10 @@
       .thead
         .tr
           %span.th Date
-          %span.th From
-          %span.th To
+          %span.th Alias
           %span.th Distance
           %span.th Actions
       .tbody
-        - render @trips
+        = render @trips
         = render "trips/form", object: @user.trips.new, button_name: "Add Trip"
     #trip-errors.form-errors

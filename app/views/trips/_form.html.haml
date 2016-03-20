@@ -1,11 +1,9 @@
 = form_for [object.user, object], remote: true, html: { class: 'tr' } do |f|
   %span.td
-    = f.date_field :trip_date, value: "#{Date.today}"
+    = f.date_field :trip_date, value: "#{Date.today}", required: true
   %span.td
-    = f.text_field :from, class: 'form-control'
+    = f.text_field :alias, class: 'form-control', required: true
   %span.td
-    = f.text_field :to, class: 'form-control'
-  %span.td
-    = f.number_field :distance_in_kilometer, class: 'form-control', step: 0.001
+    = f.number_field :distance_in_kilometer, class: 'form-control', step: 0.001, required: true
   %span.td
     = f.submit 'Save', class: 'btn btn-sm btn-primary'
