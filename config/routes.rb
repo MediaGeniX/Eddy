@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     end
     resources :locations
     resources :trips do
+      collection do
+        post 'create_from_route'
+      end
       member do
         post 'copy_to_same_day'
         post 'copy_to_next_working_day'
