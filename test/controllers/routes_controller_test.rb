@@ -13,28 +13,17 @@
 require 'test_helper'
 
 class RoutesControllerTest < ActionController::TestCase
+
+  include Devise::TestHelpers
+
+  test "should redirect to sign_in path" do
+    get :index, user_id: users(:one)
+    assert_redirected_to new_user_session_path
+  end
+
   test "should get index" do
-    get :index
-    assert_response :success
-  end
-
-  test "should get create" do
-    get :create
-    assert_response :success
-  end
-
-  test "should get edit" do
-    get :edit
-    assert_response :success
-  end
-
-  test "should get update" do
-    get :update
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get :destroy
+    sign_in users(:one)
+    get :index, user_id: users(:one)
     assert_response :success
   end
 
