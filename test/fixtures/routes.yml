@@ -4,9 +4,7 @@
 #
 #  id                :integer          not null, primary key
 #  user_id           :integer          not null
-#  from              :string           not null
-#  to                :string           not null
-#  alias             :string
+#  alias             :string           not null
 #  distance_in_meter :integer          not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
