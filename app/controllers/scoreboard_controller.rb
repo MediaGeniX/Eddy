@@ -1,5 +1,7 @@
 class ScoreboardController < ApplicationController
   def index
+    @current_meters = Trip.sum(:distance_in_meter)
+
     @yellow_jersey = Trip.group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
     @polka_dot_jersey = Trip.joins(:user).select('DISTINCT trip_date').group(:user).count
 

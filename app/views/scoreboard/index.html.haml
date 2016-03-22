@@ -1,4 +1,8 @@
 .container
+  %h3 Company progress
+  %p
+    = "Current distance: <strong>#{meter_to_kilometer(@current_meters)}/#{pretty_number(15000)} km</strong>".html_safe
+    %progress.progress.progress-success.progress-striped{ value: @current_meters, max: 15000000 } %
   %h3 Scoreboard
   %p
     .card-deck-wrapper
