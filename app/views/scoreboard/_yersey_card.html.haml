@@ -1,0 +1,20 @@
+.card
+  %img.card-img-top{src: "http://placehold.it/358x20/#{color_value}/#{color_value}"}
+    .card-block
+      %h4.card-title= title
+      %h6.card-subtitle.text-muted
+        = sub_title
+    .card-block
+      .card-title
+        %table.table.table-sm
+          %thead
+            %tr
+              %th #
+              %th Name
+              %th.text-xs-right= table_header
+          %tbody
+            - data.each_with_index do |value, i|
+              %tr
+                %th{scope: 'row'} = i+1
+                %td= user.name
+                %td.text-xs-right= extract_block[value]

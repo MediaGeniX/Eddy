@@ -3,26 +3,8 @@
   %p
     .card-deck-wrapper
       .card-deck
-        .card
-          %img.card-img-top{src: 'http://placehold.it/358x20/ffff00/ffff00'}
-          .card-block
-            %h4.card-title Yellow Jersey
-            %h6.card-subtitle.text-muted
-              Most total distance
-          .card-block
-            .card-title
-              %table.table.table-sm
-                %thead
-                  %tr
-                    %th #
-                    %th Name
-                    %th.text-xs-right Distance
-                %tbody
-                  - @yellow_jersey.each_with_index do |(user, meter), i|
-                    %tr
-                      %th{scope: 'row'}= i+1
-                      %td= user.name
-                      %td.text-xs-right= pretty_number(meter_to_kilometer(meter))
+        = yellow_yersey_card(@yellow_jersey)
+
         .card
           %img.card-img-top{src: 'http://placehold.it/358x20/ff0000/ff0000'}
           .card-block

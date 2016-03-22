@@ -3,7 +3,7 @@
     .row
       .col-lg-4
         = image_tag 'http://www.eddymerckx.com/skin/frontend/eddy_theme/default/eddy_merckx/Eddy_Merckx_the_cannibal_1.jpg'
-      .col-lg-8
+      .col-lg-4
         %h1.display-3 Eddy!
         %p Welcome to Eddy, your personal MgX 1000km challenge tracker service.
         - if user_signed_in?
@@ -11,6 +11,8 @@
         - else
           = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_session_path, class: 'btn btn-lg btn-primary-outline'
           = link_to "#{fa_icon 'user-plus'} Sign up".html_safe, new_user_registration_path, class: 'btn btn-lg btn-primary-outline'
+      .col-lg-4
+        = image_tag 'http://www.eddymerckx.com/skin/frontend/eddy_theme/default/eddy_merckx/Eddy_Merckx_the_cannibal_1.jpg'
 
 
 .container
