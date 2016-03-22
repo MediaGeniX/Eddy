@@ -16,5 +16,5 @@
             - data.each_with_index do |value, i|
               %tr
                 %th{scope: 'row'} = i+1
-                %td= user.name
+                %td= user_block[value].name
                 %td.text-xs-right= extract_block[value]
