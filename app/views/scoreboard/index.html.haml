@@ -3,109 +3,13 @@
   %p
     .card-deck-wrapper
       .card-deck
-        = yellow_yersey_card(@yellow_jersey)
-
-        .card
-          %img.card-img-top{src: 'http://placehold.it/358x20/ff0000/ff0000'}
-          .card-block
-            %h4.card-title Polka Dot Jersey
-            %h6.card-subtitle.text-muted
-              Most days biked
-          .card-block
-            .card-title
-              %table.table.table-sm
-                %thead
-                  %tr
-                    %th #
-                    %th Name
-                    %th.text-xs-right Days
-                %tbody
-                  - @polka_dot_jersey.each_with_index do |(user, days), i|
-                    %tr
-                      %th{scope: 'row'}= i+1
-                      %td= user.name
-                      %td.text-xs-right= pretty_number(days)
-        .card
-          %img.card-img-top{src: 'http://placehold.it/358x20/ffffff/ffffff'}
-          .card-block
-            %h4.card-title No Jersey
-            %h6.card-subtitle.text-muted
-              Most distance on one day
-          .card-block
-            .card-title
-              %table.table.table-sm
-                %thead
-                  %tr
-                    %th #
-                    %th Name
-                    %th.text-xs-right Distance
-                %tbody
-                  - @green_jersey.each_with_index do |user, i|
-                    %tr
-                      %th{scope: 'row'}= i+1
-                      %td= user.name
-                      %td.text-xs-right= pretty_number(meter_to_kilometer(user.maximum_total_distance))
+        = yellow_jersey_card(@yellow_jersey)
+        = polka_dot_jersey_card(@polka_dot_jersey)
+        = green_jersey_card(@green_jersey)
 
   %p
     .card-deck-wrapper
       .card-deck
-        .card
-          %img.card-img-top{src: 'http://placehold.it/358x20/FFC0CB/FFC0CB'}
-          .card-block
-            %h4.card-title Pink Jersey
-            %h6.card-subtitle.text-muted
-              Most total distance (women)
-          .card-block
-            .card-title
-              %table.table.table-sm
-                %thead
-                  %tr
-                    %th #
-                    %th Name
-                    %th.text-xs-right Distance
-                %tbody
-                  - @pink_jersey.each_with_index do |(user, meter), i|
-                    %tr
-                      %th{scope: 'row'}= i+1
-                      %td= user.name
-                      %td.text-xs-right= pretty_number(meter_to_kilometer(meter))
-        .card
-          %img.card-img-top{src: 'http://placehold.it/358x20/ffffff/ffffff'}
-          .card-block
-            %h4.card-title White Jersey
-            %h6.card-subtitle.text-muted
-              Most total distance (< 26 year)
-          .card-block
-            .card-title
-              %table.table.table-sm
-                %thead
-                  %tr
-                    %th #
-                    %th Name
-                    %th.text-xs-right Distance
-                %tbody
-                  - @white_jersey.each_with_index do |(user, meter), i|
-                    %tr
-                      %th{scope: 'row'}= i+1
-                      %td= user.name
-                      %td.text-xs-right= pretty_number(meter_to_kilometer(meter))
-        .card
-          %img.card-img-top{src: 'http://placehold.it/358x20/D3D3D3/D3D3D3'}
-          .card-block
-            %h4.card-title Grey Jersey
-            %h6.card-subtitle.text-muted
-              Most total distance (> 50 year)
-          .card-block
-            .card-title
-              %table.table.table-sm
-                %thead
-                  %tr
-                    %th #
-                    %th Name
-                    %th.text-xs-right Distance
-                %tbody
-                  - @grey_jersey.each_with_index do |(user, meter), i|
-                    %tr
-                      %th{scope: 'row'}= i+1
-                      %td= user.name
-                      %td.text-xs-right= pretty_number(meter_to_kilometer(meter))
+        = pink_jersey_card(@pink_jersey)
+        = white_jersey_card(@white_jersey)
+        = grey_jersey_card(@grey_jersey)
