@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby "2.3.0"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -41,7 +42,9 @@ gem 'haml-rails', '~> 0.9'
 gem 'working_hours'
 
 # Tether for Bootstrap 4 popovers and stuff
-gem 'rails-assets-tether', '>= 1.1.0'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 # Pagination
 gem 'will_paginate', '~> 3.1'
