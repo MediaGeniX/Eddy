@@ -13,11 +13,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  from: 
-  to: 
-  distance: 1
+  user: user(:one)
+  alias: "route 1"
+  distance_in_meter: 1
 
 two:
-  from: 
-  to: 
-  distance: 1
+  user: user(:two)
+  alias: "route 2"
+  distance_in_meter: 1

@@ -15,9 +15,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  distance: 1
+  user: user(:one)
+  alias: "trip 1"
+  distance_in_meter: 1
   trip_date: 2016-03-15 20:39:22
 
 two:
-  distance: 1
+  user: user(:two)
+  alias: "trip 2"
+  distance_in_meter: 1
   trip_date: 2016-03-15 20:39:22
