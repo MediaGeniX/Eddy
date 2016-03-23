@@ -3,7 +3,7 @@ class ScoreboardController < ApplicationController
     @current_meters = Trip.sum(:distance_in_meter)
 
     @yellow_jersey = Trip.group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
-    @polka_dot_jersey = Trip.joins(:user).select('DISTINCT trip_date').group(:user).count
+    @polka_dot_jersey = Trip.joins(:user).select('DISTINCT trip_date').order('count_distinct_trip_date DESC').group(:user).count
 
     @green_jersey = User.find_by_sql(
       'SELECT MAX(total_distance) AS maximum_total_distance, name, id AS id
