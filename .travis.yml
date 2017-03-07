@@ -1,4 +1,6 @@
-nguage: ruby
+language: ruby
 rvm:
    - "2.3.0"
 
+notifications:
+  slack: mediagenix:53JNHfdqg6Prqy5wyl5xTqDy
