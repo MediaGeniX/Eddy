@@ -2,7 +2,7 @@
 lock "3.7.2"
 
 set :application, "Eddy"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :repo_url, "git@github.com:MediaGeniX/Eddy.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
