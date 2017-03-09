@@ -2,18 +2,17 @@
   %h3 Company progress
   %p
     = "Current distance: <strong>#{meter_to_kilometer(@current_meters)}/#{pretty_number(15000)} km</strong>".html_safe
-    %progress.progress.progress-success.progress-striped{ value: @current_meters, max: 15000000 } %
+    .progress
+      .progress-bar{style: "width: #{(@current_meters.to_f/(15*1000*1000))*100}%", "aria-valuemin" => 0, "aria-valuemax" => 15000000, "aria-valuenow" => @current_meters}
   %h3 Scoreboard
   %p
-    .card-deck-wrapper
-      .card-deck
-        = yellow_jersey_card(@yellow_jersey)
-        = polka_dot_jersey_card(@polka_dot_jersey)
-        = green_jersey_card(@green_jersey)
+    .card-deck
+      = yellow_jersey_card(@yellow_jersey)
+      = polka_dot_jersey_card(@polka_dot_jersey)
+      = green_jersey_card(@green_jersey)
 
   %p
-    .card-deck-wrapper
-      .card-deck
-        = pink_jersey_card(@pink_jersey)
-        = white_jersey_card(@white_jersey)
-        = grey_jersey_card(@grey_jersey)
+    .card-deck
+      = pink_jersey_card(@pink_jersey)
+      = white_jersey_card(@white_jersey)
+      = grey_jersey_card(@grey_jersey)

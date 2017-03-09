@@ -6,15 +6,16 @@
         = sub_title
     .card-block
       .card-title
+      %p.card-text
         %table.table.table-sm
-          %thead
+          %thead.thead-default
             %tr
               %th #
               %th Name
-              %th.text-xs-right= table_header
+              %th.text-right= table_header
           %tbody
             - data.each_with_index do |value, i|
               %tr
                 %th{scope: 'row'}= i+1
                 %td= user_block[value].name
-                %td.text-xs-right= extract_block[value]
+                %td.text-right= extract_block[value]

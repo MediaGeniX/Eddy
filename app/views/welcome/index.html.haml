@@ -7,10 +7,10 @@
         %h1.display-3 Eddy!
         %p Welcome to Eddy, your personal MgX 1000km challenge tracker service.
         - if user_signed_in?
-          = link_to "#{fa_icon :plus} Add new trip".html_safe, user_trips_path(current_user), class: 'btn btn-lg btn-primary-outline'
+          = link_to "#{fa_icon :plus} Add new trip".html_safe, user_trips_path(current_user), class: 'btn btn-lg btn-outline-primary'
         - else
-          = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_session_path, class: 'btn btn-lg btn-primary-outline'
-          = link_to "#{fa_icon 'user-plus'} Sign up".html_safe, new_user_registration_path, class: 'btn btn-lg btn-primary-outline'
+          = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_session_path, class: 'btn btn-lg btn-outline-primary'
+          = link_to "#{fa_icon 'user-plus'} Sign up".html_safe, new_user_registration_path, class: 'btn btn-lg btn-outline-primary'
 
 
 .container
