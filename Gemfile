@@ -34,8 +34,8 @@ gem 'cancancan'
 gem 'devise'
 gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
 
-# Haml!
-gem 'haml-rails', '~> 0.9'
+# Hamlit, a blazing HAML implementation
+gem 'hamlit'
 
 # Check out these suit days
 gem 'working_hours'
