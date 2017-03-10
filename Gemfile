@@ -71,7 +71,7 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 
-  gem 'capistrano', '~> 3.6'
+  gem 'capistrano', '~> 3.8'
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-rvm'
   gem 'capistrano-passenger'

@@ -253,7 +253,7 @@ DEPENDENCIES
   bcrypt-ruby (~> 3.0.0)
   bootstrap (~> 4.0.0.alpha6)
   cancancan
-  capistrano (~> 3.6)
+  capistrano (~> 3.8)
   capistrano-passenger
   capistrano-rails (~> 1.2)
   capistrano-rvm
