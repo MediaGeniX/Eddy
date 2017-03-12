@@ -13,15 +13,16 @@
 class RoutesController < ApplicationController
 
   before_filter :authenticate_user!
-
-  load_and_authorize_resource :user
-  load_and_authorize_resource :route, through: :user
+  before_action :get_user, only: [:create, :index]
+  before_action :get_route, only: [:show, :update, :destroy, :edit]
 
   def index
+    @routes = policy_scope(@user.routes)
   end
 
   def create
-    @route.save
+    @route = @user.routes.create(route_params)
+    authorize @route
   end
 
   def edit
@@ -40,4 +41,16 @@ class RoutesController < ApplicationController
   def route_params
     params.require(:route).permit(:alias, :distance_in_kilometer)
   end
+
+  def get_route
+    @route = Route.find(params[:id])
+    authorize @route
+  end
+
+  def get_user
+    @user = User.find(params[:user_id])
+    authorize @user, :edit?
+  end
+
+
 end

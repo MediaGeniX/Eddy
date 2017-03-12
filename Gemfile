@@ -29,7 +29,7 @@ gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'font-awesome-rails'
 
 # CanCanCan is used for authorization
-gem 'cancancan'
+gem 'pundit'
 
 # Login in is always nice
 gem 'devise'
