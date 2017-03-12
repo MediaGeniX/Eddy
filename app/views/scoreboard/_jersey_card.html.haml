@@ -1,21 +1,18 @@
 .card
-  %mg.card-img-top{src: "https://placehold.it/358x20/#{color_value}/#{color_value}"}
-    .card-block
-      %h4.card-title= title
-      %h6.card-subtitle.text-muted
-        = sub_title
-    .card-block
-      .card-title
-      %p.card-text
-        %table.table.table-sm
-          %thead.thead-default
+  .card-block
+    %h4.card-title= title
+    %h6.card-subtitle.text-muted
+      = sub_title
+    %p.card-text
+      %table.table.table-sm
+        %thead.thead-default
+          %tr
+            %th #
+            %th Name
+            %th.text-right= table_header
+        %tbody
+          - data.each_with_index do |value, i|
             %tr
-              %th #
-              %th Name
-              %th.text-right= table_header
-          %tbody
-            - data.each_with_index do |value, i|
-              %tr
-                %th{scope: 'row'}= i+1
-                %td= user_block[value].name
-                %td.text-right= extract_block[value]
+              %th{scope: 'row'}= i+1
+              %td= user_block[value].name
+              %td.text-right= extract_block[value]
