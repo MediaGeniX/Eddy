@@ -12,7 +12,7 @@
             %th.text-right= table_header
         %tbody
           - data.each_with_index do |value, i|
-            %tr
+            %tr{class: ("table-success" if user_signed_in? && current_user.name == user_block[value].name)}
               %th{scope: 'row'}= i+1
               %td= user_block[value].name
               %td.text-right= extract_block[value]
