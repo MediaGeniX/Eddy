@@ -8,5 +8,5 @@
       = link_to 'Same day'.html_safe, copy_to_same_day_user_trip_path(trip.user, trip), class: "dropdown-item", remote: true, method: :post
   |
   = link_to "#{fa_icon :edit}<span class='hidden-md-down'> Edit</span>".html_safe, edit_user_trip_path(trip.user, trip), class: "btn btn-secondary btn-sm", remote: true
-  - if can? :destroy, trip
+  - if policy(trip).destroy?
     = link_to "#{fa_icon :trash}<span class='hidden-md-down'> Delete</span>".html_safe, user_trip_path(trip.user, trip), class: "btn btn-danger btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete
