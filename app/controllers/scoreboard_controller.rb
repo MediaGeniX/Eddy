@@ -1,4 +1,7 @@
 class ScoreboardController < ApplicationController
+
+  before_filter :authenticate_user
+
   def index
     @current_meters = Trip.sum(:distance_in_meter)
 
