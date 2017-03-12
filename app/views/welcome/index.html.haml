@@ -19,23 +19,36 @@
       %h4 1. Sign up
       %p
         Create an account to manage your routes, ridden trips and progress.
-      %p
+      %p.hidden-lg-up
         = link_to 'Sign up »', new_user_registration_path, class: 'btn btn-secondary'
     .col-lg-3
       %h4 2. Set up routes
       %p
         Configure your favorite routes for quick & easy trip recording.
-      %p
+      %p.hidden-lg-up
         = link_to 'Routes »', if user_signed_in? then user_routes_path(current_user) else new_user_session_path end, class: 'btn btn-secondary'
     .col-lg-3
       %h4 3. Record a trip
       %p
         Record trips to make your kilometers count!
-      %p
+      %p.hidden-lg-up
         = link_to 'Trips »', if user_signed_in? then user_trips_path(current_user) else new_user_session_path end, class: 'btn btn-secondary'
     .col-lg-3
       %h4 4. Check the rankings
       %p
         An overview of the current leading bikers in every category.
+      %p.hidden-lg-up
+        = link_to 'Scoreboard »', scoreboard_path, class: 'btn btn-secondary'
+  .row.hidden-md-down
+    .col-lg-3
+      %p
+        = link_to 'Sign up »', new_user_registration_path, class: 'btn btn-secondary'
+    .col-lg-3
+      %p
+        = link_to 'Routes »', if user_signed_in? then user_routes_path(current_user) else new_user_session_path end, class: 'btn btn-secondary'
+    .col-lg-3
+      %p
+        = link_to 'Trips »', if user_signed_in? then user_trips_path(current_user) else new_user_session_path end, class: 'btn btn-secondary'
+    .col-lg-3
       %p
         = link_to 'Scoreboard »', scoreboard_path, class: 'btn btn-secondary'
