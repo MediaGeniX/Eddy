@@ -201,6 +201,8 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.8.0)
+    slackistrano (3.1.0)
+      capistrano (>= 3.5.0)
     slop (3.6.0)
     spring (2.0.1)
       activesupport (>= 4.2)
@@ -273,6 +275,7 @@ DEPENDENCIES
   rails-assets-tether (>= 1.1.0)!
   rubocop
   sdoc (~> 0.4.0)
+  slackistrano
   spring
   sqlite3
   turbolinks
