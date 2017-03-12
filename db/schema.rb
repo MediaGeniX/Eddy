@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160315220019) do
+ActiveRecord::Schema.define(version: 20170312120349) do
 
   create_table "routes", force: :cascade do |t|
     t.integer  "user_id",           null: false
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20160315220019) do
     t.integer  "distance_in_meter", null: false
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
+  end
+
+  create_table "seasons", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trips", force: :cascade do |t|
