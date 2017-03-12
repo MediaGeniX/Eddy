@@ -11,6 +11,9 @@
         - else
           = link_to "#{fa_icon 'sign-in'} Sign in".html_safe, new_user_session_path, class: 'btn btn-lg btn-outline-primary'
           = link_to "#{fa_icon 'user-plus'} Sign up".html_safe, new_user_registration_path, class: 'btn btn-lg btn-outline-primary'
+      .col-lg-4
+        = yellow_jersey_card(@yellow_jersey, 5)
+
 
 
 .container

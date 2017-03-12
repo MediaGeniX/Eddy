@@ -1,7 +1,13 @@
 module ScoreboardHelper
 
-  def yellow_jersey_card(jersey_data)
-    jersey_card data: jersey_data,
+  def yellow_jersey_card(jersey_data, limit = nil)
+    if limit.nil?
+      data = jersey_data
+    else
+      data = jersey_data.first(limit)
+    end
+
+    jersey_card data: data,
       title: "Yellow Jersey",
       sub_title: "Most total distance",
       table_header: "Distance",
