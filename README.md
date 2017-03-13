@@ -1,4 +1,4 @@
-# 1000km [![Build Status](https://travis-ci.org/MediaGeniX/Eddy.svg?branch=master)](https://travis-ci.org/MediaGeniX/Eddy)
-App for MgX 1000km
+# Eddy [![Build Status](https://travis-ci.org/MediaGeniX/Eddy.svg?branch=master)](https://travis-ci.org/MediaGeniX/Eddy)
+Your personal MgX 1000km challenge tracker service.
 
 (c) 2017
