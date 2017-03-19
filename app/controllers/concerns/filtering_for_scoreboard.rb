@@ -55,15 +55,16 @@ module FilteringForScoreboard
   end
 
   def set_white_jersey
-    @white_jersey = trips.joins(:user).merge(User.young).group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
+    @white_jersey = trips.joins(:user).where('users.birthdate >= ?', @start_date - 26.years).group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
   end
 
   def set_grey_jersey
-    @grey_jersey = trips.joins(:user).merge(User.old).group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
+    @grey_jersey = trips.joins(:user).where('users.birthdate <= ?', @end_date - 50.years).group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
   end
 
   private
-  def trips
-    Trip.where(trip_date: @start_date..@end_date)
-  end
+
+    def trips
+      Trip.where(trip_date: @start_date..@end_date)
+    end
 end
