@@ -10,4 +10,8 @@ module ApplicationHelper
   def pretty_number(number)
     number_with_delimiter(number, delimiter: '.')
   end
+
+  def pretty_date(date)
+    date.strftime("%d-%m-%Y")
+  end
 end
