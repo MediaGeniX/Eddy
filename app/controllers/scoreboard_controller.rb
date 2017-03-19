@@ -1,4 +1,5 @@
 class ScoreboardController < ApplicationController
+
   def index
     @current_meters = Trip.sum(:distance_in_meter)
 

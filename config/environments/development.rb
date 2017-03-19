@@ -43,5 +43,6 @@ Rails.application.configure do
 
   config.web_console.automount = true
 
+  config.web_console.whitelisted_ips = "10.0.2.2"
 
 end

@@ -13,21 +13,25 @@
 #
 
 class TripsController < ApplicationController
-  load_and_authorize_resource :user
-  load_and_authorize_resource :trip, through: :user
+
+  before_filter :authenticate_user!
+
+  before_action :get_user, only: [:create, :index, :create_from_route]
+  before_action :get_trip, except: [:index, :create, :create_from_route]
 
   def index
     @trips = @user.trips.sorted_by_date
   end
 
   def create
-    @trip.save
+    @trip = @user.trips.create(trip_params)
+    authorize @trip
   end
 
   def create_from_route
     route = @user.routes.find route_params[:route]
     date = route_params[:trip_date]
-    authorize! :read, route
+    authorize route, :show?
     @new_trip = Trip.create_from_route(@user, date, route)
   end
 
@@ -44,17 +48,30 @@ class TripsController < ApplicationController
 
   def copy_to_next_working_day
     @copied_trip = @trip.copy_to_next_working_day
+    authorize @copied_trip
   end
 
   def copy_to_today
     @copied_trip = @trip.copy_to_today
+    authorize @copied_trip
   end
 
   def copy_to_same_day
     @copied_trip = @trip.copy_to_same_day
+    authorize @copied_trip
   end
 
   private
+
+  def get_user
+    @user = User.find(params[:user_id])
+    authorize @user, :edit?
+  end
+
+  def get_trip
+    @trip = Trip.find(params[:id])
+    authorize @trip
+  end
 
   def trip_params
     params.require(:trip).permit(:trip_date, :alias, :distance_in_kilometer)
