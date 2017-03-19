@@ -6,6 +6,8 @@
       .progress-bar{style: "width: #{(@current_meters.to_f/(15*1000*1000))*100}%", "aria-valuemin" => 0, "aria-valuemax" => 15000000, "aria-valuenow" => @current_meters}
   %h3 Scoreboard
   %p
+    = select_tag 'season', options_from_collection_for_select(@seasons, :id, :display_name, @selected_season.id), {class: 'form-control'}
+  %p
     .card-deck
       = yellow_jersey_card(@yellow_jersey)
       = polka_dot_jersey_card(@polka_dot_jersey)

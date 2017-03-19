@@ -1,6 +1,9 @@
 class ScoreboardController < ApplicationController
 
   def index
+    @seasons = Season.all
+    @selected_season = Season.find_by_id(params[:season]) || Season.default
+
     @current_meters = Trip.sum(:distance_in_meter)
 
     @yellow_jersey = Trip.group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)

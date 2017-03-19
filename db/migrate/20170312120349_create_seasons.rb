@@ -3,7 +3,8 @@ class CreateSeasons < ActiveRecord::Migration
     create_table :seasons do |t|
       t.date :start_date
       t.date :end_date
-      t.string :name
+      t.boolean :default, null: false, default: false
+      t.string :name, null: false
 
       t.timestamps null: false
     end
