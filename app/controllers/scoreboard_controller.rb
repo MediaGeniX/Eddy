@@ -3,6 +3,7 @@ class ScoreboardController < ApplicationController
   def index
     @seasons = Season.all
     @selected_season = Season.find_by_id(params[:season]) || Season.default
+    @selected_season = nil
 
     @current_meters = Trip.sum(:distance_in_meter)
 
