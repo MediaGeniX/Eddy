@@ -9,8 +9,7 @@ module FilteringForScoreboard
   end
 
   def set_season
-    @selected_season = Season.find_by_id([params[:season]]) || Season.default
-  end
+    @selected_season = Season.find_by_id([params[:season]]) || Season.default end
 
   def set_dates
     @start_date = (@selected_season.start_date if @selected_season) || Date.new(1900)
