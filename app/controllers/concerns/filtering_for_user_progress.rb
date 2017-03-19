@@ -16,7 +16,9 @@ module FilteringForUserProgress
   end
 
   def set_season
-    @selected_season = Season.find_by_id([params[:season]]) || Season.default
+    @selected_season = Season.where("cast(strftime('%Y', start_date) as int) = ?", params[:season]).first \
+      || Season.find_by_id([params[:season]]) \
+      || Season.default
   end
 
   def set_dates
