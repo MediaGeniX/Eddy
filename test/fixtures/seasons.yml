@@ -13,12 +13,8 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  start_date: 2017-03-12
-  end_date: 2017-03-12
-  name: MyString
-
-two:
-  start_date: 2017-03-12
-  end_date: 2017-03-12
-  name: MyString
+all:
+  start_date: 1900-1-1
+  end_date: 2200-12-31
+  name: All
+  default: true
