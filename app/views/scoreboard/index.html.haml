@@ -1,7 +1,8 @@
 .container
   %h3 Filter
   %p
-    = select_tag 'season', options_from_collection_for_select(@seasons, :id, :display_name, (@selected_season.id if @selected_season)), {class: 'form-control'}
+    = form_tag(scoreboard_path, {method: :get, class: 'form form-horizontal'}) do |f|
+      = select_tag('season', options_from_collection_for_select(@seasons, :id, :display_name, (@selected_season.id if @selected_season)), {onchange: 'this.form.submit()', class: 'form-control'})
   %h3 Company progress
   %p
     = "Current distance: <strong>#{meter_to_kilometer(@current_meters)}/#{pretty_number(15000)} km</strong>".html_safe
