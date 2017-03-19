@@ -1,5 +1,11 @@
 .container
   %h3 Progress
+  = form_tag(user_path(current_user), {method: :get}) do |f|
+    .form-group.row
+      %label.col-sm-1.col-form-label.col-form-label-sm
+        Season:
+      .col-sm-11
+        = select_tag('season', options_from_collection_for_select(@seasons, :id, :display_name, (@selected_season.id if @selected_season)), {onchange: 'this.form.submit()', class: 'form-control form-control-sm'})
   %p
     = "Current distance: <strong>#{meter_to_kilometer(@current_meters)}/1000 km</strong>".html_safe
     .progress

@@ -1,0 +1,24 @@
+# == Schema Information
+#
+# Table name: seasons
+#
+#  id         :integer          not null, primary key
+#  start_date :date
+#  end_date   :date
+#  default    :boolean          default(FALSE), not null
+#  name       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2017-03-12
+  end_date: 2017-03-12
+  name: MyString
+
+two:
+  start_date: 2017-03-12
+  end_date: 2017-03-12
+  name: MyString
