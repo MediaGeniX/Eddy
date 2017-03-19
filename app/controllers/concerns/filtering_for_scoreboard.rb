@@ -13,8 +13,8 @@ module FilteringForScoreboard
   end
 
   def set_dates
-    @start_date = @selected_season.start_date if @selected_season
-    @end_date = @selected_season.end_date if @selected_season
+    @start_date = (@selected_season.start_date if @selected_season) || Date.new(1900)
+    @end_date = (@selected_season.end_date if @selected_season) || Date.new(2200)
   end
 
   def set_current_meters
