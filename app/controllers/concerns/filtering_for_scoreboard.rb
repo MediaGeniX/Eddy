@@ -9,7 +9,7 @@ module FilteringForScoreboard
   end
 
   def set_season
-    @selected_season = Season.where("cast(strftime('%Y', start_date) as int) = ?", params[:season]).first \
+    @selected_season = (params[:season] && Season.where("cast(strftime('%Y', start_date) as int) = ?", params[:season]).first) \
       || Season.find_by_id([params[:season]]) \
       || Season.default
   end
