@@ -33,14 +33,13 @@
 #
 
 class UsersController < ApplicationController
+  include FilteringForUserProgress
 
   before_filter :authenticate_user!
   before_action :get_user
 
   def show
-    @current_meters = @user.trips.sum(:distance_in_meter)
-    @days_cycled = @user.trips.count('DISTINCT trip_date')
-    @largest_distance_in_one_day = @user.trips.group(:trip_date).order('sum_distance_in_meter DESC').limit(1).sum(:distance_in_meter).values.first || 0
+    @seasons = Season.all
   end
 
   private

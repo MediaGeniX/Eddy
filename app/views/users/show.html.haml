@@ -1,6 +1,9 @@
 .container
   %h3 Progress
   %p
+    = form_tag(user_path(current_user), {method: :get, class: 'form form-horizontal'}) do |f|
+      = select_tag('season', options_from_collection_for_select(@seasons, :id, :display_name, (@selected_season.id if @selected_season)), {onchange: 'this.form.submit()', class: 'form-control'})
+  %p
     = "Current distance: <strong>#{meter_to_kilometer(@current_meters)}/1000 km</strong>".html_safe
     .progress
       .progress-bar{style: "width: #{(@current_meters.to_f/(1*1000*1000))*100}%", "aria-valuemin" => 0, "aria-valuemax" => 15000000, "aria-valuenow" => @current_meters}
