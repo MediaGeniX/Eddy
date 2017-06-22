@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   get 'scoreboard', to: 'scoreboard#index'
 
+  get '/.well-known/acme-challenge/:id' => 'welcome#letsencrypt'
+
   resources :users do
     member do
       get 'progress', to: 'progress#index'
