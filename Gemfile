@@ -60,6 +60,11 @@ end
 
 group :test do
   gem 'factory_girl_rails', '~> 4.0'
+  gem 'spinach'
+  gem 'spinach-rails'
+  gem 'capybara'
+  gem 'site_prism'
+  gem 'rspec'
 end
 
 group :production do
