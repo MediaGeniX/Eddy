@@ -65,6 +65,8 @@ group :test do
   gem 'capybara'
   gem 'site_prism'
   gem 'rspec'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
 
 group :production do
