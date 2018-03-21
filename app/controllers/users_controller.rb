@@ -35,7 +35,7 @@
 class UsersController < ApplicationController
   include FilteringForUserProgress
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   before_action :get_user
 
   def show
