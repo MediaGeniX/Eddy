@@ -6,7 +6,7 @@
 #  start_date :date
 #  end_date   :date
 #  default    :boolean          default(FALSE), not null
-#  name       :string
+#  name       :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #

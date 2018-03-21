@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ScoreboardControllerTest < ActionController::TestCase
 
-  include Devise::TestHelpers
+  include Devise::Test::ControllerHelpers
 
   test "should assign yellow jersey" do
     get :index

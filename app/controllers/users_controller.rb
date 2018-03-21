@@ -5,8 +5,8 @@
 #  id                     :integer          not null, primary key
 #  name                   :string           not null
 #  birthdate              :date             not null
-#  location               :integer          default(0), not null
-#  sex                    :integer          default(0), not null
+#  location               :integer          default("belgium"), not null
+#  sex                    :integer          default("male"), not null
 #  admin                  :boolean          default(FALSE), not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
@@ -35,7 +35,7 @@
 class UsersController < ApplicationController
   include FilteringForUserProgress
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   before_action :get_user
 
   def show
