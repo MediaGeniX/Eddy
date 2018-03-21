@@ -35,7 +35,7 @@ gem 'pundit'
 
 # Login in is always nice
 gem 'devise'
-gem 'bcrypt-ruby', '~> 3.0.0', require: 'bcrypt'
+gem 'bcrypt', git: 'https://github.com/codahale/bcrypt-ruby.git', require: 'bcrypt'
 
 # Hamlit, a blazing HAML implementation
 gem 'hamlit'
@@ -64,7 +64,7 @@ group :test do
   gem 'capybara'
   gem 'site_prism'
   gem 'rspec'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '1.6.1'
   gem 'selenium-webdriver'
 end
 
@@ -84,6 +84,8 @@ group :development do
   gem 'capistrano-rvm'
   gem 'capistrano-passenger'
   gem 'slackistrano'
+
+  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
