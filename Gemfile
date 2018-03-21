@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # easy styles
 gem 'bootstrap', '~> 4.0'
+gem 'popper_js', '~> 1.12.9'
 
 # awesome font is awesome
 gem 'font-awesome-rails'

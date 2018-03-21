@@ -1,12 +1,12 @@
 #span.text-nowrap
   %span.btn-group
-    %button.btn.btn-sm.btn-secondary.dropdown-toggle{data: {toggle: 'dropdown'}, aria: {hashpopup: 'true', expanded: 'false'}}
-      = "#{fa_icon :clone}<span class='hidden-md-down'> Duplicate to</span>".html_safe
+    %button.btn.btn-sm.btn-light.dropdown-toggle{data: {toggle: 'dropdown'}, aria: {hashpopup: 'true', expanded: 'false'}}
+      = "#{fa_icon :clone}<span class='d-none d-lg-inline'> Duplicate to</span>".html_safe
     %span.dropdown-menu
       = link_to 'Next working day'.html_safe, copy_to_next_working_day_user_trip_path(trip.user, trip), class: "dropdown-item", remote: true, method: :post
       = link_to 'Today'.html_safe, copy_to_today_user_trip_path(trip.user, trip), class: "dropdown-item", remote: true, method: :post
       = link_to 'Same day'.html_safe, copy_to_same_day_user_trip_path(trip.user, trip), class: "dropdown-item", remote: true, method: :post
   |
-  = link_to "#{fa_icon :edit}<span class='hidden-md-down'> Edit</span>".html_safe, edit_user_trip_path(trip.user, trip), class: "btn btn-secondary btn-sm", remote: true
+  = link_to "#{fa_icon :edit}<span class='d-none d-lg-inline'> Edit</span>".html_safe, edit_user_trip_path(trip.user, trip), class: "btn btn-light btn-sm", remote: true
   - if policy(trip).destroy?
-    = link_to "#{fa_icon :trash}<span class='hidden-md-down'> Delete</span>".html_safe, user_trip_path(trip.user, trip), class: "btn btn-danger btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete
+    = link_to "#{fa_icon :trash}<span class='d-none d-lg-inline'> Delete</span>".html_safe, user_trip_path(trip.user, trip), class: "btn btn-warning btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete

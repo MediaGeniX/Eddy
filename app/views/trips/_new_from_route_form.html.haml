@@ -4,6 +4,6 @@
     = date_field :trip, :trip_date, value: Date.today, class: 'form-control', required: true
   .form-group
     = label_tag(:route, 'Route')
-    = select :trip, :route, options_from_collection_for_select(@user.routes, :id, :display_name), { include_blank: false }, { required: true , class: 'form-control'}
+    = select :trip, :route, options_from_collection_for_select(@user.routes, :id, :display_name), {}, { required: true , class: 'form-control'}
   .form-group
     = submit_tag "Add trip", class: 'btn btn-primary'

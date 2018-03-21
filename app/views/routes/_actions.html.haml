@@ -1,2 +1,2 @@
-= link_to "#{fa_icon :edit}<span class='hidden-md-down'> Edit</span>".html_safe, edit_user_route_path(route.user, route), class: "btn btn-secondary btn-sm", remote: true
-= link_to "#{fa_icon :trash}<span class='hidden-md-down'> Delete</span>".html_safe, user_route_path(route.user, route), class: "btn btn-danger btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete
+= link_to "#{fa_icon :edit}<span class='d-none d-lg-inline'> Edit</span>".html_safe, edit_user_route_path(route.user, route), class: "btn btn-light btn-sm", remote: true
+= link_to "#{fa_icon :trash}<span class='d-none d-lg-inline'> Delete</span>".html_safe, user_route_path(route.user, route), class: "btn btn-warning btn-sm", data: {confirm: 'Are you sure?'}, remote: true, method: :delete
