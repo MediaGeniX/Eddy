@@ -60,7 +60,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
   gem 'spinach'
   gem 'spinach-rails'
   gem 'capybara'

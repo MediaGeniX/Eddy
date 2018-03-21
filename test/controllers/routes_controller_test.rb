@@ -13,7 +13,7 @@ require 'test_helper'
 
 class RoutesControllerTest < ActionController::TestCase
 
-  include Devise::TestHelpers
+  include Devise::Test::ControllerHelpers
 
   test "should redirect to sign_in path" do
     get :index, user_id: users(:one)
