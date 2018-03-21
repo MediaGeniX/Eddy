@@ -16,13 +16,13 @@ class RoutesControllerTest < ActionController::TestCase
   include Devise::Test::ControllerHelpers
 
   test "should redirect to sign_in path" do
-    get :index, user_id: users(:one)
+    get :index, params: { user_id: users(:one) }
     assert_redirected_to new_user_session_path
   end
 
   test "should get index" do
     sign_in users(:one)
-    get :index, user_id: users(:one)
+    get :index, params: { user_id: users(:one) }
     assert_response :success
   end
 
