@@ -43,9 +43,6 @@ gem 'hamlit'
 # Check out these suit days
 gem 'working_hours'
 
-# Tether for Bootstrap 4 popovers and stuff
-gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
-
 # Pagination
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
