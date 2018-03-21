@@ -5,8 +5,8 @@
 #  id                     :integer          not null, primary key
 #  name                   :string           not null
 #  birthdate              :date             not null
-#  location               :integer          default(0), not null
-#  sex                    :integer          default(0), not null
+#  location               :integer          default("belgium"), not null
+#  sex                    :integer          default("male"), not null
 #  admin                  :boolean          default(FALSE), not null
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
