@@ -14,7 +14,7 @@
 
 class TripsController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
 
   before_action :get_user, only: [:create, :index, :create_from_route]
   before_action :get_trip, except: [:index, :create, :create_from_route]

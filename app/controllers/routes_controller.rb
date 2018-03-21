@@ -12,7 +12,8 @@
 
 class RoutesController < ApplicationController
 
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
+
   before_action :get_user, only: [:create, :index]
   before_action :get_route, only: [:show, :update, :destroy, :edit]
 

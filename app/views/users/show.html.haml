@@ -16,15 +16,15 @@
       .card.text-xs-center
         .card-header
           Total distance
-        .card-block
+        .card-body
           %h4.card-title= "#{pretty_number(meter_to_kilometer(@current_meters))} km"
       .card.text-xs-center
         .card-header
           Days biked
-        .card-block
+        .card-body
           %h4.card-title= @days_cycled
       .card.text-xs-center
         .card-header
           Largest distance on a single day
-        .card-block
+        .card-body
           %h4.card-title= "#{pretty_number(meter_to_kilometer(@largest_distance_in_one_day))} km"

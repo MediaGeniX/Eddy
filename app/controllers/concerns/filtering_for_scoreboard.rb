@@ -2,10 +2,10 @@ module FilteringForScoreboard
   extend ActiveSupport::Concern
 
   included do
-    before_filter :set_season
-    before_filter :set_dates
-    before_filter :set_current_meters
-    before_filter :set_jerseys
+    before_action :set_season
+    before_action :set_dates
+    before_action :set_current_meters
+    before_action :set_jerseys
   end
 
   def set_season
