@@ -2,3 +2,7 @@ language: ruby
 
 notifications:
   slack: mediagenix:53JNHfdqg6Prqy5wyl5xTqDy
+
+script:
+  - bin/rails test
+  - bin/rails test:system
