@@ -5,6 +5,9 @@ notifications:
 
 addons:
   chrome: stable
+  apt:
+  packages:
+    - chromium-chromedriver
 
 script:
   - bin/rails test
