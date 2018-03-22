@@ -47,6 +47,8 @@ gem 'working_hours'
 gem 'will_paginate', '~> 3.1'
 gem 'will_paginate-bootstrap'
 
+gem 'puma'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'annotate'
@@ -66,7 +68,6 @@ end
 
 group :production do
   gem 'pg'
-  gem 'puma'
   gem 'rails_12factor'
 end
 
