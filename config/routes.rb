@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'scoreboard', to: 'scoreboard#index'
+  get 'trips', to: 'trips#recent'
 
   get '/.well-known/acme-challenge/:id' => 'welcome#letsencrypt'
+
 
   resources :users do
     member do
