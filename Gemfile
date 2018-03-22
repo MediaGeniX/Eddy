@@ -59,12 +59,8 @@ end
 group :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'spinach'
-  gem 'spinach-rails'
   gem 'capybara'
-  gem 'site_prism'
-  gem 'rspec'
-  gem 'database_cleaner', '1.6.1'
+  gem 'minitest-capybara'
   gem 'selenium-webdriver'
 end
 
