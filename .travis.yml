@@ -3,6 +3,9 @@ language: ruby
 notifications:
   slack: mediagenix:53JNHfdqg6Prqy5wyl5xTqDy
 
+addons:
+  chrome: stable
+
 script:
   - bin/rails test
   - bin/rails test:system
