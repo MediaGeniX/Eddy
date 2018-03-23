@@ -11,4 +11,3 @@ addons:
 
 script:
   - bin/rails test
-  - bin/rails test:system
