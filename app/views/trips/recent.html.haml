@@ -3,8 +3,8 @@
   #table-trips.table.table-striped
     .thead
       .tr
+        %span.th User
         %span.th Date
-        %span.th Alias
         %span.th Distance (km)
     .tbody
       = render partial: 'recent_trip', collection: @trips
