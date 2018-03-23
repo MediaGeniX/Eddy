@@ -21,5 +21,6 @@
           %span.th Distance (km)
           %span.th Actions
       .tbody
-        = render partial: 'trip', collection: @trips, locals: { render_actions: true }
+        = render @trips
+
     #edit-trip-errors.form-errors

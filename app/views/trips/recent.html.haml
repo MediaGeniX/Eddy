@@ -7,6 +7,6 @@
         %span.th Alias
         %span.th Distance (km)
     .tbody
-      = render partial: 'trip', collection: @trips, locals: { render_actions: false }
+      = render partial: 'recent_trip', collection: @trips
 
   = will_paginate @trips, list_classes: %w(pagination justify-content-center)

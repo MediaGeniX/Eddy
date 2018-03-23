@@ -24,7 +24,7 @@ class TripsController < ApplicationController
   end
 
   def recent
-    @trips = Trip.all.sorted_by_date.paginate(page: params[:page], per_page: 5)
+    @trips = Trip.sorted_by_date.paginate(page: params[:page], per_page: 15).includes(:user)
     authorize current_user
   end
 
