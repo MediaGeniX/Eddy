@@ -5,6 +5,7 @@
     = trip.alias
   %span.td
     = trip.distance_in_kilometer
-  %span.td
-    .nowrap
-      = render "trips/actions", trip: trip
+  - if render_actions
+    %span.td
+      .nowrap
+        = render "trips/actions", trip: trip

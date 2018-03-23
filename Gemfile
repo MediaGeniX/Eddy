@@ -45,7 +45,7 @@ gem 'working_hours'
 
 # Pagination
 gem 'will_paginate', '~> 3.1'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
 
 gem 'puma'
 

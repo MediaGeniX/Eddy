@@ -17,10 +17,15 @@ class TripsController < ApplicationController
   before_action :authenticate_user!
 
   before_action :get_user, only: [:create, :index, :create_from_route]
-  before_action :get_trip, except: [:index, :create, :create_from_route]
+  before_action :get_trip, except: [:index, :recent, :create, :create_from_route]
 
   def index
     @trips = @user.trips.sorted_by_date
+  end
+
+  def recent
+    @trips = Trip.all.sorted_by_date.paginate(page: params[:page], per_page: 5)
+    authorize current_user
   end
 
   def create

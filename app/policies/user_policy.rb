@@ -4,6 +4,10 @@ class UserPolicy < ApplicationPolicy
     show?
   end
 
+  def recent?
+    show?
+  end
+
   def index?
     show?
   end
