@@ -3,11 +3,5 @@ language: ruby
 notifications:
   slack: mediagenix:53JNHfdqg6Prqy5wyl5xTqDy
 
-addons:
-  chrome: stable
-  apt:
-  packages:
-    - chromium-chromedriver
-
 script:
   - bin/rails test
