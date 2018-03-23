@@ -6,5 +6,5 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
-User.create!(name: "Admin", birthdate: Date.today, location: 0, sex: 0, email:'test@mediagenix.tv', password: 'testtest', password_confirmation: 'testtest')
+User.create!(name: "Admin", birthdate: Date.today, location: 0, sex: 0, email:'test@mediagenix.tv', password: 'testtest', password_confirmation: 'testtest', confirmed_at: DateTime.now)
 Season.create!(start_date: Date.new(1900), end_date: Date.new(2200), default: true, name: 'Default all')

@@ -45,7 +45,9 @@ gem 'working_hours'
 
 # Pagination
 gem 'will_paginate', '~> 3.1'
-gem 'will_paginate-bootstrap'
+gem 'will_paginate-bootstrap4'
+
+gem 'puma'
 
 group :development, :test do
   gem 'sqlite3'
@@ -59,18 +61,13 @@ end
 group :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
-  gem 'spinach'
-  gem 'spinach-rails'
   gem 'capybara'
-  gem 'site_prism'
-  gem 'rspec'
-  gem 'database_cleaner', '1.6.1'
+  gem 'minitest-capybara'
   gem 'selenium-webdriver'
 end
 
 group :production do
   gem 'pg'
-  gem 'puma'
   gem 'rails_12factor'
 end
 
