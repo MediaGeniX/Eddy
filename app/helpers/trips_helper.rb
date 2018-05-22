@@ -12,5 +12,6 @@
 #  updated_at        :datetime         not null
 #
 
+
 module TripsHelper
 end

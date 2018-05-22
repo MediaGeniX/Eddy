@@ -28,6 +28,11 @@
       = f.label :location
       = f.collection_select :location, User.locations.keys, :to_s, :titlecase, {}, class: 'form-control'
     %fieldset.form-group
+      = f.label :employee_number
+      = f.text_field :employee_number, class: "form-control", placeholder: "Your employee number"
+      %small.text-muted
+        This can be found on your monthly payment strip. Leave empty if you're not salaried by MGX directly.
+    %fieldset.form-group
       = f.label :current_password
       = f.password_field :current_password, class: "form-control"
       %small.text-muted

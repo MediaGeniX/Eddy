@@ -10,6 +10,7 @@
 #  updated_at        :datetime         not null
 #
 
+
 class Route < Movement
   def display_name
     "#{self.alias} (#{self.distance_in_meter / 1000.0} km)"

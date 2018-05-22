@@ -10,6 +10,7 @@
 #  updated_at        :datetime         not null
 #
 
+
 class RoutesController < ApplicationController
 
   before_action :authenticate_user!

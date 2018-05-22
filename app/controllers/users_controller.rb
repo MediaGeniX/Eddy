@@ -24,6 +24,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string
+#  employee_number        :string
 #
 # Indexes
 #
@@ -31,6 +32,7 @@
 #  index_users_on_email                 (email) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
+
 
 class UsersController < ApplicationController
   include FilteringForUserProgress
