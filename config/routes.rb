@@ -26,4 +26,9 @@ Rails.application.routes.draw do
     end
     resources :routes
   end
+
+  namespace 'hr' do
+    resources :users, only: [:index, :edit, :update]
+    get 'report', to: 'trips#report'
+  end
 end

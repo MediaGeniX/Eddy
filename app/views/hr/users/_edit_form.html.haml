@@ -1,0 +1,7 @@
+= form_for [:hr, object], remote: true, html: { class: 'tr' } do |f|
+  %span.td
+    = f.text_field :name, required: true, class: 'form-control'
+  %span.td
+    = f.text_field :employee_number, class: 'form-control'
+  %span.td
+    = f.submit 'Save user', class: 'btn btn-sm btn-primary'
