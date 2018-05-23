@@ -51,5 +51,6 @@ class User < ActiveRecord::Base
   enum location: [:belgium, :skopje]
   enum sex: [:male, :female]
 
+  default_scope { order('name') }
   scope :women, -> { where('sex = ?', 1) }
 end
