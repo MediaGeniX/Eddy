@@ -19,8 +19,14 @@
     - if user_signed_in?
       %ul.nav.navbar-nav
         - if current_user.admin?
-          %li.nav-item
-            = link_to('HR', hr_users_path, class: 'nav-link')
+          %ul#hr-dropdown.nav.navbar-nav
+            %li.nav-item.dropdown
+              %a.nav-link.dropdown-toggle{ data: {toggle: 'dropdown'}, role: 'button', aria: { haspopup: true, expanded: false } }
+                HR
+              .dropdown-menu
+                = link_to 'Report', new_hr_report_path, class: 'dropdown-item'
+                .dropdown-divider
+                = link_to 'Employees', hr_users_path, class: 'dropdown-item'
         %ul#manage-account-dropdown.nav.navbar-nav
           %li.nav-item.dropdown
             %a.nav-link.dropdown-toggle{ data: {toggle: 'dropdown'}, role: 'button', aria: { haspopup: true, expanded: false } }

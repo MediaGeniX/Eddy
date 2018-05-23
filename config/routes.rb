@@ -29,6 +29,6 @@ Rails.application.routes.draw do
 
   namespace 'hr' do
     resources :users, only: [:index, :edit, :update]
-    get 'report', to: 'trips#report'
+    resources :reports, only: [:new, :create]
   end
 end
