@@ -5,7 +5,7 @@ class Hr::UsersController < ApplicationController
   before_action :get_user, only: [:edit, :update]
 
   def index
-    @users = User.all
+    @users = User.by_name
     authorize [:hr, @users]
   end
 
