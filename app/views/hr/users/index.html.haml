@@ -1,0 +1,10 @@
+.container
+  %h3 Users
+  #table-users.table.table-striped
+    .thead
+      .tr
+        %span.th Name
+        %span.th Employee number
+        %span.th Actions
+    .tbody
+      = render @users

@@ -11,6 +11,7 @@
 #  updated_at :datetime         not null
 #
 
+
 class Season < ActiveRecord::Base
   validates_uniqueness_of :default, if: :default
 

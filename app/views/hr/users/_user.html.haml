@@ -1,0 +1,8 @@
+.tr{:id => dom_id(user)}
+  %span.td
+    = user.name
+  %span.td
+    = user.employee_number
+  %span.td
+    .nowrap
+      = render "hr/users/actions", user: user

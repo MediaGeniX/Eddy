@@ -29,6 +29,6 @@ class ApplicationController < ActionController::Base
   end
 
   def additional_devise_parameters
-    [ :name, :birthdate, :location, :sex ]
+    [ :name, :birthdate, :location, :sex, :employee_number ]
   end
 end

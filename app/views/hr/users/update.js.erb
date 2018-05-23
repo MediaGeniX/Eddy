@@ -1,0 +1,6 @@
+<% if @user.errors.any? %>
+  $('#edit-user-errors').html("<%= escape_javascript form_errors(@user) %>")
+<% else %>
+  $('#edit-user-errors').html('')
+  $('#edit_<%= dom_id(@user) %>').replaceWith("<%= j render @user %>");
+<% end %>

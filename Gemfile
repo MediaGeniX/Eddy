@@ -49,6 +49,9 @@ gem 'will_paginate-bootstrap4'
 
 gem 'puma'
 
+# Reports
+gem 'csv'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'annotate'

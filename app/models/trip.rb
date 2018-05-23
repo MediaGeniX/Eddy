@@ -39,6 +39,19 @@ class Trip < Movement
     )
   end
 
+  def self.to_csv(start_date, end_date)
+    trips = self.where(trip_date: start_date..end_date).group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
+
+    CSV.generate(headers: true) do |csv|
+      csv << %w{name employee_number distance_in_meter}
+
+      trips.each do |trip|
+        user = trip.first
+        csv << [user.name, user.employee_number, trip.second]
+      end
+    end
+  end
+
   private
 
   def copy_to_date(date)

@@ -26,4 +26,9 @@ Rails.application.routes.draw do
     end
     resources :routes
   end
+
+  namespace 'hr' do
+    resources :users, only: [:index, :edit, :update]
+    resources :reports, only: [:new, :create]
+  end
 end

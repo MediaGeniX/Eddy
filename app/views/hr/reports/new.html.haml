@@ -1,0 +1,11 @@
+.container
+  %h3 Report
+  = form_with(url: hr_reports_path(:csv), local: true) do |f|
+    .form-group
+      = label(:start_date, :start_date)
+      = f.date_field :start_date, value: Date.today - 30, class: 'form-control', required: true
+    .form-group
+      = label(:end_date, :end_date)
+      = f.date_field :end_date, value: Date.today, class: 'form-control', required: true
+    .form-group
+      = f.submit 'Generate', class: 'btn btn-primary', data: { disable_with: false }
