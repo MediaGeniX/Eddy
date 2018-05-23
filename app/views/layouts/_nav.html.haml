@@ -3,7 +3,7 @@
     %span.navbar-toggler-icon
   =link_to 'Eddy', root_path, class: 'navbar-brand'
   #navigation.collapse.navbar-collapse
-    %ul.nav.navbar-nav.mr-auto
+    %ul.navbar-nav.mr-auto
       %li.nav-item
         = link_to('Scoreboard', scoreboard_path, class: 'nav-link')
       - if user_signed_in?
@@ -17,24 +17,22 @@
           = link_to('My routes', user_routes_path(current_user), class: 'nav-link')
 
     - if user_signed_in?
-      %ul.nav.navbar-nav
+      %ul.navbar-nav
         - if current_user.admin?
-          %ul#hr-dropdown.nav.navbar-nav
-            %li.nav-item.dropdown
-              %a.nav-link.dropdown-toggle{ data: {toggle: 'dropdown'}, role: 'button', aria: { haspopup: true, expanded: false } }
-                HR
-              .dropdown-menu
-                = link_to 'Report', new_hr_report_path, class: 'dropdown-item'
-                .dropdown-divider
-                = link_to 'Employees', hr_users_path, class: 'dropdown-item'
-        %ul#manage-account-dropdown.nav.navbar-nav
           %li.nav-item.dropdown
             %a.nav-link.dropdown-toggle{ data: {toggle: 'dropdown'}, role: 'button', aria: { haspopup: true, expanded: false } }
-              Manage account
+              HR
             .dropdown-menu
-              = link_to 'Edit', edit_user_registration_path, class: 'dropdown-item'
+              = link_to 'Report', new_hr_report_path, class: 'dropdown-item'
               .dropdown-divider
-              = link_to 'Logout', destroy_user_session_path, class: 'dropdown-item', method: :delete
+              = link_to 'Employees', hr_users_path, class: 'dropdown-item'
+        %li.nav-item.dropdown
+          %a.nav-link.dropdown-toggle{ data: {toggle: 'dropdown'}, role: 'button', aria: { haspopup: true, expanded: false } }
+            Manage account
+          .dropdown-menu
+            = link_to 'Edit', edit_user_registration_path, class: 'dropdown-item'
+            .dropdown-divider
+            = link_to 'Logout', destroy_user_session_path, class: 'dropdown-item', method: :delete
 
     %span
       - if user_signed_in?
