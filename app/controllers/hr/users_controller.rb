@@ -1,5 +1,7 @@
 class Hr::UsersController < ApplicationController
 
+  before_action :authenticate_user!
+
   before_action :get_user, only: [:edit, :update]
 
   def index

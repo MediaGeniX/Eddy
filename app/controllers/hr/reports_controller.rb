@@ -1,5 +1,7 @@
 class Hr::ReportsController < ApplicationController
 
+  before_action :authenticate_user!
+
   def new
     authorize [:hr, :report]
   end
