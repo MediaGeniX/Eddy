@@ -22,11 +22,11 @@ class Hr::UsersController < ApplicationController
 
   def get_user
     @user = User.find(params[:id])
-    authorize @user, :edit?
+    authorize [:hr, @user]
   end
 
   def user_params
-    params.require(:user).permit(:employee_number)
+    params.require(:user).permit(:name, :employee_number)
   end
 
 end
