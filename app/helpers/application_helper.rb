@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def pretty_number(number)
-    number_with_delimiter(number, delimiter: '.')
+    number_with_delimiter(number)
   end
 
   def pretty_date(date)
