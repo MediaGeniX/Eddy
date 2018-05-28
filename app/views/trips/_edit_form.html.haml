@@ -1,6 +1,6 @@
 = form_for [object.user, object], remote: true, html: { class: 'tr' } do |f|
   %span.td
-    = f.date_field :trip_date, value: "#{Date.today}", required: true
+    = f.date_field :trip_date, class: 'form-control', required: true
   %span.td
     = f.text_field :alias, class: 'form-control', required: true
   %span.td
