@@ -9,13 +9,12 @@
       = select_tag('season', options_from_collection_for_select(@seasons, :id, :name, (@selected_season.id if @selected_season)), {onchange: 'this.form.submit()', class: 'form-control form-control'})
   %p
     Current distance:
-    %strong
-      = "#{pretty_number(meter_to_kilometer(@current_meters))}"
-      - if @selected_season && @selected_season.distance_in_meter
-        \/
-        = "#{pretty_number(meter_to_kilometer(@selected_season.distance_in_meter))} km"
-        .progress
-          .progress-bar{style: "width: #{(@current_meters.to_f/(@selected_season.distance_in_meter))*100}%", "aria-valuemin" => 0, "aria-valuemax" => @selected_season.distance_in_meter, "aria-valuenow" => @current_meters}
+    %strong= "#{pretty_number(meter_to_kilometer(@current_meters))} km"
+    - if @selected_season && @selected_season.distance_in_meter
+      \/
+      %strong= "#{pretty_number(meter_to_kilometer(@selected_season.distance_in_meter))} km"
+      .progress
+        .progress-bar{style: "width: #{(@current_meters.to_f/@selected_season.distance_in_meter*100)}%", "aria-valuemin" => 0, "aria-valuemax" => @selected_season.distance_in_meter, "aria-valuenow" => @current_meters}
 
   %h3 Scoreboard
   %p
