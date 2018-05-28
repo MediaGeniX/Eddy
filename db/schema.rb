@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180522132655) do
+ActiveRecord::Schema.define(version: 2018_05_28_125739) do
 
   create_table "routes", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20180522132655) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "distance_in_meter", default: 25000000
   end
 
   create_table "trips", force: :cascade do |t|
