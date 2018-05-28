@@ -2,15 +2,15 @@
 #
 # Table name: seasons
 #
-#  id         :integer          not null, primary key
-#  start_date :date
-#  end_date   :date
-#  default    :boolean          default(FALSE), not null
-#  name       :string           not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                :integer          not null, primary key
+#  start_date        :date
+#  end_date          :date
+#  default           :boolean          default(FALSE), not null
+#  name              :string           not null
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  distance_in_meter :integer          default(25000000)
 #
-
 
 class Season < ActiveRecord::Base
   validates_uniqueness_of :default, if: :default
