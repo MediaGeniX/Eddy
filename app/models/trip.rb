@@ -40,14 +40,16 @@ class Trip < Movement
   end
 
   def self.to_csv(start_date, end_date)
-    trips = self.where(trip_date: start_date..end_date).group(:user).order('sum_distance_in_meter DESC').sum(:distance_in_meter)
+    trips = self.where(trip_date: start_date..end_date).joins(:user).where("users.employee_number <> ''").group(:user).order('users.name DESC').sum(:distance_in_meter)
+    trips_amount = self.where(trip_date: start_date..end_date).joins(:user).where("users.employee_number <> ''").select('DISTINCT trip_date').order('count_distinct_trip_date DESC').group(:user).count
 
     CSV.generate(headers: true) do |csv|
-      csv << %w{name employee_number distance_in_meter}
+      csv << %w{name employer_number employee_number days_biked compensation}
 
       trips.each do |trip|
         user = trip.first
-        csv << [user.name, user.employee_number, trip.second]
+        amount_of_trips = trips_amount[user]
+        csv << [user.name, "1WM0179", user.employee_number, amount_of_trips, trip.second / 1000 * 0.23]
       end
     end
   end
