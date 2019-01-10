@@ -49,7 +49,7 @@ class Trip < Movement
       trips.each do |trip|
         user = trip.first
         amount_of_trips = trips_amount[user]
-        csv << [user.name, '1WM0179', user.employee_number, amount_of_trips, trip.second / 1000.0, trip.second / 1000.0 * 0.23]
+        csv << [user.name, '1WM0179', user.employee_number, amount_of_trips, trip.second / 1000.0, trip.second / 1000.0 * 0.24]
       end
     end
   end
