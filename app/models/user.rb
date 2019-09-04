@@ -47,7 +47,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enum location: [:belgium, :skopje]
+  enum location: [:belgium, :skopje, :USA, :asia]
   enum sex: [:male, :female]
 
   scope :by_name, -> { order('name') }
