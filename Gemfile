@@ -12,7 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2.2'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-gem 'coffee-script-source', '~> 1.12', '>= 1.12.2'
+gem 'mini_racer'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -27,7 +27,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootsnap', require: false
 
 # Javascript engine
-gem 'mini_racer'
 
 # easy styles
 gem 'bootstrap', '~> 4.0'
