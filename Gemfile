@@ -29,8 +29,8 @@ gem 'bootsnap', require: false
 # Javascript engine
 
 # easy styles
-gem 'bootstrap', '~> 4.0'
-gem 'popper_js', '~> 1.12.9'
+gem 'bootstrap', '~> 4.4.1'
+gem 'popper_js', '~> 1.14.5'
 
 # awesome font is awesome
 gem 'font-awesome-rails'
