@@ -338,7 +338,6 @@ DEPENDENCIES
   capistrano-rvm
   capybara
   coffee-rails (~> 4.2.2)
-  coffee-script-source (~> 1.12, >= 1.12.2)
   csv
   devise
   erb2haml
