@@ -23,6 +23,9 @@ gem 'jbuilder', '~> 2.7'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# Make Rails boot faster
+gem 'bootsnap', require: false
+
 # Javascript engine
 gem 'mini_racer'
 
