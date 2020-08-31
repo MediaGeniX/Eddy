@@ -2,10 +2,11 @@
   .container
     .row
       .col-lg-4
-        = image_tag 'eddy.jpg'
+        = image_tag 'remco_eddy.jpg'
       .col-lg-4
-        %h1.display-3 Eddy!
-        %p Welcome to Eddy, your personal MgX 1000km challenge tracker service.
+        %h5 Temporarily rebranded in support of Remco
+        %h1.display-3 Remco!
+        %p Welcome to Remco, your personal MgX 1000km challenge tracker service.
         - if user_signed_in?
           = link_to "#{fa_icon :plus} Add new trip".html_safe, user_trips_path(current_user), class: 'btn btn-lg btn-outline-primary'
         - else
