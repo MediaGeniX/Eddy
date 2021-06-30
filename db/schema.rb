@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_05_28_125739) do
 
-  create_table "routes", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "routes", id: :serial, force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "alias", null: false
     t.integer "distance_in_meter", null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_125739) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "seasons", force: :cascade do |t|
+  create_table "seasons", id: :serial, force: :cascade do |t|
     t.date "start_date"
     t.date "end_date"
     t.boolean "default", default: false, null: false
@@ -30,7 +33,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_125739) do
     t.integer "distance_in_meter", default: 25000000
   end
 
-  create_table "trips", force: :cascade do |t|
+  create_table "trips", id: :serial, force: :cascade do |t|
     t.date "trip_date", null: false
     t.integer "route_id"
     t.integer "user_id", null: false
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 2018_05_28_125739) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.date "birthdate", null: false
     t.integer "location", default: 0, null: false

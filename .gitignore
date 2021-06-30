@@ -33,3 +33,7 @@ bower.json
 
 # Ignore pow environment settings
 .powenv
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+/public/assets
